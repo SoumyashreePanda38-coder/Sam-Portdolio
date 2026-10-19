@@ -1,0 +1,1229 @@
+/* =========================================================
+   CERTIFICATIONS SECTION
+========================================================= */
+
+.certifications-section {
+  --bg: #070711;
+  --panel: rgba(16, 15, 30, 0.78);
+
+  --purple: #b85cff;
+  --violet: #7c4dff;
+  --cyan: #28e7ff;
+  --orange: #ff8a3d;
+  --gold: #ffc857;
+
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  padding: 110px 0 90px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(124, 77, 255, 0.10),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(40, 231, 255, 0.07),
+      transparent 30%
+    ),
+    #070711;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.certifications-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cert-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 80%,
+    transparent
+  );
+}
+
+
+.cert-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.14;
+}
+
+.cert-glow-purple {
+  top: -160px;
+  left: -130px;
+  background: var(--purple);
+}
+
+.cert-glow-cyan {
+  right: -150px;
+  top: 30%;
+  background: var(--cyan);
+}
+
+.cert-glow-orange {
+  bottom: -180px;
+  left: 40%;
+  background: var(--orange);
+}
+
+
+.cert-orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+
+.cert-orbit-one {
+  width: 700px;
+  height: 240px;
+  right: -250px;
+  top: 80px;
+}
+
+.cert-orbit-two {
+  width: 600px;
+  height: 200px;
+  left: -250px;
+  bottom: 80px;
+}
+
+
+.cert-watermark {
+  position: absolute;
+  right: -30px;
+  bottom: 20px;
+
+  font-size: clamp(100px, 18vw, 280px);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+
+  color: rgba(255, 255, 255, 0.018);
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.certifications-container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+
+  margin-bottom: 65px;
+}
+
+
+.cert-heading {
+  max-width: 700px;
+}
+
+
+.cert-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 18px;
+
+  color: var(--purple);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+
+.kicker-line {
+  width: 42px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    var(--purple),
+    var(--cyan)
+  );
+
+  box-shadow:
+    0 0 10px rgba(184, 92, 255, 0.7);
+}
+
+
+.cert-heading h2 {
+  margin: 0;
+
+  font-size: clamp(2.8rem, 5.2vw, 5.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+
+  color: #f5f4ff;
+}
+
+
+.cert-heading h2 span {
+  display: block;
+
+  background: linear-gradient(
+    100deg,
+    var(--purple),
+    var(--cyan)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.cert-heading p {
+  max-width: 590px;
+
+  margin: 25px 0 0;
+
+  color: rgba(220, 218, 240, 0.65);
+
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   TOP BADGES
+========================================================= */
+
+.cert-badges {
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+
+  padding-top: 20px;
+}
+
+
+.cert-badge {
+  width: 105px;
+
+  text-align: center;
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+
+.cert-badge:hover {
+  transform: translateY(-7px);
+}
+
+
+.cert-badge:not(.active) {
+  opacity: 0.72;
+}
+
+
+.badge-icon {
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(10, 10, 20, 0.8);
+
+  border: 1px solid currentColor;
+
+  font-size: 1.35rem;
+
+  transition:
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.cert-badge.active .badge-icon {
+  transform: scale(1.08);
+}
+
+
+.cert-badge span {
+  display: block;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.35;
+
+  letter-spacing: 0.09em;
+}
+
+
+.cert-badge small {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 0.52rem;
+  opacity: 0.65;
+  letter-spacing: 0.12em;
+}
+
+
+.badge-gold {
+  color: var(--gold);
+}
+
+.badge-gold .badge-icon {
+  box-shadow:
+    0 0 20px rgba(255, 200, 87, 0.18),
+    inset 0 0 18px rgba(255, 200, 87, 0.04);
+}
+
+
+.badge-cyan {
+  color: var(--cyan);
+}
+
+.badge-cyan .badge-icon {
+  box-shadow:
+    0 0 20px rgba(40, 231, 255, 0.18),
+    inset 0 0 18px rgba(40, 231, 255, 0.04);
+}
+
+
+.badge-orange {
+  color: var(--orange);
+}
+
+.badge-orange .badge-icon {
+  box-shadow:
+    0 0 20px rgba(255, 138, 61, 0.18),
+    inset 0 0 18px rgba(255, 138, 61, 0.04);
+}
+
+
+/* =========================================================
+   MAIN SHOWCASE
+========================================================= */
+
+.certificate-showcase {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 570px;
+}
+
+
+.certificate-stage {
+  position: relative;
+
+  width: min(920px, 82vw);
+  aspect-ratio: 16 / 10;
+
+  padding: 12px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.55),
+    0 0 60px rgba(124, 77, 255, 0.08);
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   CERTIFICATE GLOW
+========================================================= */
+
+.stage-glow {
+  position: absolute;
+  inset: 15%;
+
+  z-index: -1;
+
+  border-radius: 50%;
+
+  filter: blur(55px);
+
+  opacity: 0.25;
+
+  transition:
+    background 0.7s ease,
+    box-shadow 0.7s ease;
+}
+
+
+.certificate-stage[data-accent="gold"] .stage-glow {
+  background: var(--gold);
+  box-shadow:
+    0 0 100px var(--gold);
+}
+
+.certificate-stage[data-accent="cyan"] .stage-glow {
+  background: var(--cyan);
+  box-shadow:
+    0 0 100px var(--cyan);
+}
+
+.certificate-stage[data-accent="orange"] .stage-glow {
+  background: var(--orange);
+  box-shadow:
+    0 0 100px var(--orange);
+}
+
+
+/* =========================================================
+   SLIDES
+========================================================= */
+
+.certificate-slide {
+  position: absolute;
+  inset: 12px;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: scale(1.035);
+
+  transition:
+    opacity 0.7s ease,
+    transform 1s cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0.7s ease;
+
+  background: #11111b;
+}
+
+
+.certificate-slide.active {
+  opacity: 1;
+  visibility: visible;
+
+  transform: scale(1);
+}
+
+
+.certificate-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  background: #11111b;
+
+  transition:
+    transform 1.2s ease;
+}
+
+
+.certificate-slide.active .certificate-image {
+  transform: scale(1.005);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.certificate-overlay {
+  position: absolute;
+  inset: 12px;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 4, 12, 0.28),
+      transparent 25%,
+      transparent 70%,
+      rgba(4, 4, 12, 0.7)
+    );
+}
+
+
+/* =========================================================
+   TOP LABEL
+========================================================= */
+
+.certificate-top-label {
+  position: absolute;
+  top: 30px;
+  left: 32px;
+  right: 32px;
+
+  z-index: 6;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  pointer-events: none;
+}
+
+
+.certificate-top-label > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  border-radius: 30px;
+
+  background: rgba(5, 5, 15, 0.7);
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  backdrop-filter: blur(12px);
+
+  color: #ffffff;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+
+.certificate-top-label i {
+  color: var(--cyan);
+}
+
+
+.certificate-number {
+  padding: 8px 13px;
+
+  border-radius: 30px;
+
+  background: rgba(5, 5, 15, 0.7);
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  backdrop-filter: blur(12px);
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   CERTIFICATE INFO
+========================================================= */
+
+.certificate-info {
+  position: absolute;
+
+  left: 34px;
+  bottom: 30px;
+
+  z-index: 6;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  pointer-events: none;
+}
+
+
+.certificate-info-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(7, 7, 17, 0.82);
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  backdrop-filter: blur(12px);
+
+  color: var(--cyan);
+
+  font-size: 1.1rem;
+
+  box-shadow:
+    0 0 25px rgba(40, 231, 255, 0.16);
+}
+
+
+.certificate-info-category {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+}
+
+
+.certificate-info h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CORNER
+========================================================= */
+
+.stage-corner {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 90px;
+  height: 90px;
+
+  z-index: 7;
+
+  pointer-events: none;
+
+  border-right: 2px solid rgba(40, 231, 255, 0.6);
+  border-bottom: 2px solid rgba(184, 92, 255, 0.6);
+
+  border-bottom-right-radius: 18px;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.showcase-control {
+  position: absolute;
+
+  z-index: 10;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(8, 8, 18, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  color: #ffffff;
+
+  backdrop-filter: blur(15px);
+
+  cursor: pointer;
+
+  font-size: 1.1rem;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.showcase-control:hover {
+  transform: scale(1.1);
+
+  color: var(--cyan);
+
+  border-color: var(--cyan);
+
+  box-shadow:
+    0 0 25px rgba(40, 231, 255, 0.25);
+}
+
+
+.control-left {
+  left: 0;
+}
+
+
+.control-right {
+  right: 0;
+}
+
+
+/* =========================================================
+   DOT NAVIGATION
+========================================================= */
+
+.certificate-navigation {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 28px;
+}
+
+
+.certificate-dots {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.certificate-dot {
+  width: 26px;
+  height: 6px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 20px;
+
+  background: rgba(125, 115, 190, 0.25);
+
+  cursor: pointer;
+
+  transition:
+    width 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.certificate-dot.active {
+  width: 48px;
+
+  background: linear-gradient(
+    90deg,
+    var(--purple),
+    var(--cyan)
+  );
+
+  box-shadow:
+    0 0 14px rgba(40, 231, 255, 0.45);
+}
+
+
+/* =========================================================
+   BOTTOM STRIP
+========================================================= */
+
+.cert-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 38px;
+
+  padding: 18px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.cert-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(211, 207, 235, 0.55);
+
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+
+
+.bottom-line {
+  width: 45px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    var(--purple),
+    var(--cyan)
+  );
+}
+
+
+.cert-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 15px;
+
+  border: 1px solid rgba(184, 92, 255, 0.4);
+
+  border-radius: 30px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+
+.bottom-status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--cyan);
+
+  box-shadow:
+    0 0 10px var(--cyan);
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.cert-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 32px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 62px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: rgba(235, 233, 248, 0.7);
+
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+
+.summary-item:last-child {
+  border-right: none;
+}
+
+
+.summary-item i {
+  color: var(--purple);
+
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .cert-header {
+    flex-direction: column;
+  }
+
+  .cert-badges {
+    width: 100%;
+    justify-content: flex-start;
+
+    padding-top: 0;
+  }
+
+  .certificate-showcase {
+    min-height: 500px;
+  }
+
+  .certificate-stage {
+    width: min(850px, 84vw);
+  }
+
+  .control-left {
+    left: 5px;
+  }
+
+  .control-right {
+    right: 5px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .certifications-section {
+    padding: 80px 0 60px;
+  }
+
+
+  .cert-header {
+    margin-bottom: 35px;
+    gap: 30px;
+  }
+
+
+  .cert-heading h2 {
+    font-size: 2.65rem;
+  }
+
+
+  .cert-heading p {
+    font-size: 0.9rem;
+  }
+
+
+  .cert-badges {
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 8px;
+  }
+
+
+  .cert-badge {
+    width: 88px;
+  }
+
+
+  .badge-icon {
+    width: 54px;
+    height: 54px;
+
+    font-size: 1.1rem;
+  }
+
+
+  .cert-badge span {
+    font-size: 0.52rem;
+  }
+
+
+  .cert-badge small {
+    font-size: 0.45rem;
+  }
+
+
+  .certificate-showcase {
+    min-height: auto;
+
+    padding: 0 5px;
+  }
+
+
+  .certificate-stage {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    padding: 7px;
+
+    border-radius: 15px;
+  }
+
+
+  .certificate-slide {
+    inset: 7px;
+
+    border-radius: 10px;
+  }
+
+
+  .certificate-overlay {
+    inset: 7px;
+
+    border-radius: 10px;
+  }
+
+
+  .certificate-top-label {
+    top: 17px;
+    left: 18px;
+    right: 18px;
+  }
+
+
+  .certificate-top-label > span:first-child,
+  .certificate-number {
+    padding: 6px 9px;
+
+    font-size: 0.48rem;
+  }
+
+
+  .certificate-info {
+    left: 19px;
+    bottom: 18px;
+  }
+
+
+  .certificate-info-icon {
+    width: 38px;
+    height: 38px;
+
+    font-size: 0.85rem;
+  }
+
+
+  .certificate-info-category {
+    font-size: 0.45rem;
+  }
+
+
+  .certificate-info h3 {
+    font-size: 0.85rem;
+  }
+
+
+  .showcase-control {
+    width: 40px;
+    height: 40px;
+
+    font-size: 0.85rem;
+  }
+
+
+  .control-left {
+    left: -5px;
+  }
+
+
+  .control-right {
+    right: -5px;
+  }
+
+
+  .certificate-navigation {
+    margin-top: 20px;
+  }
+
+
+  .certificate-dot {
+    width: 20px;
+    height: 5px;
+  }
+
+
+  .certificate-dot.active {
+    width: 35px;
+  }
+
+
+  .cert-bottom {
+    margin-top: 25px;
+  }
+
+
+  .cert-bottom-left {
+    gap: 7px;
+
+    font-size: 0.48rem;
+  }
+
+
+  .bottom-line {
+    width: 25px;
+  }
+
+
+  .cert-bottom-right {
+    padding: 7px 10px;
+
+    font-size: 0.55rem;
+  }
+
+
+  .cert-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .summary-item {
+    min-height: 55px;
+
+    font-size: 0.6rem;
+
+    padding: 8px;
+  }
+
+
+  .summary-item:nth-child(2) {
+    border-right: none;
+  }
+
+
+  .summary-item:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .cert-heading h2 {
+    font-size: 2.2rem;
+  }
+
+
+  .cert-badge {
+    width: 76px;
+  }
+
+
+  .badge-icon {
+    width: 47px;
+    height: 47px;
+  }
+
+
+  .cert-badge span {
+    font-size: 0.47rem;
+  }
+
+
+  .cert-badge small {
+    display: none;
+  }
+
+
+  .certificate-stage {
+    aspect-ratio: 1 / 0.82;
+  }
+
+
+  .certificate-info {
+    bottom: 15px;
+  }
+
+
+  .certificate-info h3 {
+    font-size: 0.75rem;
+  }
+
+
+  .cert-bottom-left span:not(.bottom-line):nth-last-child(-n + 2) {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .certificate-slide,
+  .certificate-image,
+  .cert-badge,
+  .showcase-control,
+  .certificate-dot {
+    transition: none !important;
+  }
+
+}

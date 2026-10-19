@@ -1,0 +1,337 @@
+<section class="certifications-section">
+
+  <!-- BACKGROUND -->
+  <div class="certifications-background" aria-hidden="true">
+    <div class="cert-grid"></div>
+
+    <div class="cert-glow cert-glow-purple"></div>
+    <div class="cert-glow cert-glow-cyan"></div>
+    <div class="cert-glow cert-glow-orange"></div>
+
+    <div class="cert-orbit cert-orbit-one"></div>
+    <div class="cert-orbit cert-orbit-two"></div>
+
+    <div class="cert-watermark">
+      CERTS
+    </div>
+  </div>
+
+
+  <div class="container certifications-container">
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <div class="cert-header">
+
+      <div class="cert-heading">
+
+        <div class="cert-kicker">
+          <span class="kicker-line"></span>
+          CERTIFICATIONS
+        </div>
+
+        <h2>
+          Skills that build
+          <span>real-world value.</span>
+        </h2>
+
+        <p>
+          Professional certifications that strengthen
+          my foundation in finance, analytics,
+          technology and digital branding.
+        </p>
+
+      </div>
+
+
+      <!-- TOP CERTIFICATION BADGES -->
+
+      <div class="cert-badges">
+
+        <div
+          class="cert-badge badge-gold"
+          [class.active]="currentIndex === 0"
+          (click)="goToCertification(0)"
+        >
+          <div class="badge-icon">
+            <i class="bi bi-calculator-fill"></i>
+          </div>
+
+          <span>
+            TALLY PRIME
+            <small>WITH GST</small>
+          </span>
+        </div>
+
+
+        <div
+          class="cert-badge badge-cyan"
+          [class.active]="currentIndex === 1"
+          (click)="goToCertification(1)"
+        >
+          <div class="badge-icon">
+            <i class="bi bi-bar-chart-fill"></i>
+          </div>
+
+          <span>
+            POWER BI
+            <small>ANALYTICS</small>
+          </span>
+        </div>
+
+
+        <div
+          class="cert-badge badge-orange"
+          [class.active]="currentIndex === 2"
+          (click)="goToCertification(2)"
+        >
+          <div class="badge-icon">
+            <i class="bi bi-megaphone-fill"></i>
+          </div>
+
+          <span>
+            DIGITAL
+            <small>BRANDING</small>
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================
+         MAIN CERTIFICATE SHOWCASE
+    ================================== -->
+
+    <div
+      class="certificate-showcase"
+      (mouseenter)="stopAutoPlay()"
+      (mouseleave)="startAutoPlay()"
+    >
+
+      <!-- LEFT CONTROL -->
+
+      <button
+        type="button"
+        class="showcase-control control-left"
+        (click)="previousCertification()"
+        aria-label="Previous certificate"
+      >
+        <i class="bi bi-chevron-left"></i>
+      </button>
+
+
+      <!-- CERTIFICATE STAGE -->
+
+      <div
+        class="certificate-stage"
+        [attr.data-accent]="certifications[currentIndex].accent"
+      >
+
+        <!-- Decorative back glow -->
+
+        <div class="stage-glow"></div>
+
+
+        <!-- Certificate slides -->
+
+        <div
+          *ngFor="
+            let certification of certifications;
+            let i = index;
+            trackBy: trackByCertification
+          "
+          class="certificate-slide"
+          [class.active]="i === currentIndex"
+          [attr.data-accent]="certification.accent"
+        >
+
+          <img
+            [src]="certification.image"
+            [alt]="certification.title + ' certificate'"
+            class="certificate-image"
+          />
+
+        </div>
+
+
+        <!-- Dark glass overlay -->
+
+        <div class="certificate-overlay"></div>
+
+
+        <!-- TOP LABEL -->
+
+        <div class="certificate-top-label">
+
+          <span>
+            <i
+              class="bi"
+              [ngClass]="certifications[currentIndex].icon"
+            ></i>
+
+            {{ certifications[currentIndex].category }}
+          </span>
+
+          <span class="certificate-number">
+            {{ currentIndex + 1 | number:'2.0-0' }}
+            /
+            {{ certifications.length | number:'2.0-0' }}
+          </span>
+
+        </div>
+
+
+        <!-- BOTTOM INFORMATION -->
+
+        <div class="certificate-info">
+
+          <div class="certificate-info-icon">
+            <i
+              class="bi"
+              [ngClass]="certifications[currentIndex].icon"
+            ></i>
+          </div>
+
+          <div>
+
+            <span class="certificate-info-category">
+              CERTIFICATION
+            </span>
+
+            <h3>
+              {{ certifications[currentIndex].title }}
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <!-- CORNER DETAIL -->
+
+        <div class="stage-corner"></div>
+
+      </div>
+
+
+      <!-- RIGHT CONTROL -->
+
+      <button
+        type="button"
+        class="showcase-control control-right"
+        (click)="nextCertification()"
+        aria-label="Next certificate"
+      >
+        <i class="bi bi-chevron-right"></i>
+      </button>
+
+    </div>
+
+
+    <!-- =================================
+         NAVIGATION
+    ================================== -->
+
+    <div class="certificate-navigation">
+
+      <div class="certificate-dots">
+
+        <button
+          *ngFor="
+            let certification of certifications;
+            let i = index;
+            trackBy: trackByCertification
+          "
+          type="button"
+          class="certificate-dot"
+          [class.active]="i === currentIndex"
+          [attr.aria-label]="
+            'Show ' + certification.title + ' certificate'
+          "
+          (click)="goToCertification(i)"
+        ></button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================
+         BOTTOM STRIP
+    ================================== -->
+
+    <div class="cert-bottom">
+
+      <div class="cert-bottom-left">
+
+        <span class="bottom-line"></span>
+
+        <span>
+          LEARN
+        </span>
+
+        <span>/</span>
+
+        <span>
+          GROW
+        </span>
+
+        <span>/</span>
+
+        <span>
+          CREATE IMPACT
+        </span>
+
+      </div>
+
+
+      <div class="cert-bottom-right">
+
+        <span class="bottom-status-dot"></span>
+
+        <span>
+          {{ currentIndex + 1 | number:'2.0-0' }}
+          /
+          {{ certifications.length | number:'2.0-0' }}
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================
+         CERTIFICATION SUMMARY
+    ================================== -->
+
+    <div class="cert-summary">
+
+      <div class="summary-item">
+        <i class="bi bi-calculator-fill"></i>
+        <span>Tally Prime with GST</span>
+      </div>
+
+      <div class="summary-item">
+        <i class="bi bi-bar-chart-fill"></i>
+        <span>Power BI</span>
+      </div>
+
+      <div class="summary-item">
+        <i class="bi bi-cpu-fill"></i>
+        <span>Introduction to AI</span>
+      </div>
+
+      <div class="summary-item">
+        <i class="bi bi-megaphone-fill"></i>
+        <span>Digital Branding</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

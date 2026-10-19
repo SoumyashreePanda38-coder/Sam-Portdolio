@@ -1,0 +1,245 @@
+<section class="contact-section">
+
+  <!-- =====================================
+       BACKGROUND
+  ====================================== -->
+
+  <div class="contact-background" aria-hidden="true">
+
+    <div class="contact-grid"></div>
+
+    <div class="contact-glow contact-glow-one"></div>
+    <div class="contact-glow contact-glow-two"></div>
+    <div class="contact-glow contact-glow-three"></div>
+
+    <div class="contact-orbit orbit-one"></div>
+    <div class="contact-orbit orbit-two"></div>
+
+    <div class="contact-watermark">
+      CONNECT
+    </div>
+
+  </div>
+
+
+  <div class="container contact-container">
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <div class="contact-header">
+
+      <div class="contact-kicker">
+        <span class="kicker-line"></span>
+        GET IN TOUCH
+      </div>
+
+      <h2>
+        Let's start a
+        <span>conversation.</span>
+      </h2>
+
+      <p>
+        Whether it's a business opportunity, a project,
+        a collaboration or simply a conversation —
+        feel free to reach out.
+      </p>
+
+    </div>
+
+
+    <!-- =====================================
+         MAIN CONTACT AREA
+    ====================================== -->
+
+    <div class="contact-main">
+
+
+      <!-- =====================================
+           LEFT — MESSAGE
+      ====================================== -->
+
+      <div class="contact-intro">
+
+        <div class="intro-index">
+          01
+        </div>
+
+        <div class="intro-content">
+
+          <span class="intro-label">
+            OPEN TO CONNECTIONS
+          </span>
+
+          <h3>
+            Good ideas usually
+            <strong>start with a conversation.</strong>
+          </h3>
+
+          <p>
+            I'm always interested in connecting with people,
+            exploring opportunities and turning ideas into
+            meaningful work.
+          </p>
+
+        </div>
+
+
+        <div class="contact-signature">
+
+          <span class="signature-line"></span>
+
+          <span>
+            SAMBHAB SHREE SAHOO
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================
+           RIGHT — CONTACT CARDS
+      ====================================== -->
+
+      <div class="contact-methods">
+
+        <a
+          *ngFor="
+            let contact of contactMethods;
+            let i = index;
+            trackBy: trackByContact
+          "
+          [href]="contact.href"
+          [attr.target]="
+            contact.type === 'social' ? '_blank' : null
+          "
+          [attr.rel]="
+            contact.type === 'social'
+              ? 'noopener noreferrer'
+              : null
+          "
+          class="contact-card"
+          [class.active]="i === activeContactIndex"
+          [attr.data-accent]="contact.accent"
+          (mouseenter)="setActiveContact(i)"
+        >
+
+          <div class="contact-card-index">
+            0{{ i + 1 }}
+          </div>
+
+          <div class="contact-icon">
+
+            <i
+              class="bi"
+              [ngClass]="contact.icon"
+            ></i>
+
+          </div>
+
+          <div class="contact-card-content">
+
+            <span class="contact-card-label">
+              {{ contact.label }}
+            </span>
+
+            <span class="contact-card-value">
+              {{ contact.value }}
+            </span>
+
+          </div>
+
+          <div class="contact-card-arrow">
+
+            <i class="bi bi-arrow-up-right"></i>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================
+         BOTTOM CTA
+    ====================================== -->
+
+    <div class="contact-cta">
+
+      <div class="cta-glow"></div>
+
+      <div class="cta-left">
+
+        <div class="cta-icon">
+          <i class="bi bi-chat-square-text-fill"></i>
+        </div>
+
+        <div>
+
+          <span class="cta-label">
+            HAVE SOMETHING IN MIND?
+          </span>
+
+          <h3>
+            Let's build something
+            <span>worth talking about.</span>
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <a
+        href="mailto:sambhab307@gmail.com"
+        class="cta-button"
+      >
+
+        <span>
+          START A CONVERSATION
+        </span>
+
+        <i class="bi bi-arrow-up-right"></i>
+
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         CONTACT FOOTER STRIP
+    ====================================== -->
+
+    <div class="contact-footer-strip">
+
+      <div class="footer-status">
+
+        <span class="status-dot"></span>
+
+        <span>
+          AVAILABLE FOR CONNECTIONS
+        </span>
+
+      </div>
+
+      <div class="footer-location">
+
+        <i class="bi bi-geo-alt"></i>
+
+        <span>
+          BHUBANESWAR, INDIA
+        </span>
+
+      </div>
+
+      <div class="footer-line"></div>
+
+    </div>
+
+  </div>
+
+</section>

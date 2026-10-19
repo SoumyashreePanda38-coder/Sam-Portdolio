@@ -1,0 +1,466 @@
+<section class="about-section" id="about">
+
+    <!-- =====================================================
+       BACKGROUND
+       ===================================================== -->
+
+    <div class="about-grid"></div>
+
+    <div class="ambient-orb orb-purple"></div>
+    <div class="ambient-orb orb-cyan"></div>
+    <div class="ambient-orb orb-green"></div>
+    <div class="ambient-orb orb-blue"></div>
+
+
+    <div class="about-container">
+
+        <!-- =====================================================
+         SECTION HEADER
+         ===================================================== -->
+
+        <div class="section-heading">
+
+            <div class="heading-left">
+
+                <span class="section-kicker">
+                    <span class="kicker-line"></span>
+                    ABOUT ME
+                </span>
+
+                <h2>
+                    Where curiosity meets
+                    <span>strategy.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="heading-right">
+
+                <span class="heading-index">01 / 08</span>
+
+                <p>
+                    A blend of marketing thinking, analytical curiosity
+                    and a constant desire to understand what drives
+                    business and people.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+         MAIN INTRODUCTION
+         ===================================================== -->
+
+        <div class="about-intro">
+
+            <!-- PROFILE -->
+
+            <div class="profile-panel">
+
+                <div class="profile-panel-glow"></div>
+
+                <div class="profile-image-wrapper">
+
+                    <img src="assets/images/profile/profile.jpeg" alt="Sambhab Shree Sahoo" class="profile-image" />
+
+                    <div class="image-border"></div>
+
+                    <!-- Decorative frame corners -->
+
+                    <span class="frame-corner corner-top-left"></span>
+                    <span class="frame-corner corner-top-right"></span>
+                    <span class="frame-corner corner-bottom-left"></span>
+                    <span class="frame-corner corner-bottom-right"></span>
+
+                    <!-- Scan line -->
+
+                    <div class="frame-scanline"></div>
+
+                    <div class="image-status">
+                        <span></span>
+                        Open to Opportunities
+                    </div>
+
+                </div>
+
+
+                <!-- Floating identity card -->
+
+                <div class="identity-card">
+
+                    <span class="identity-label">
+                        CURRENT FOCUS
+                    </span>
+
+                    <strong>
+                        Marketing
+                        <span>×</span>
+                        Analytics
+                    </strong>
+
+                    <small>
+                        Turning information into direction.
+                    </small>
+
+                </div>
+
+
+                <!-- Data points -->
+
+                <div class="data-point point-one">
+                    <span></span>
+                    INSIGHT
+                </div>
+
+                <div class="data-point point-two">
+                    <span></span>
+                    STRATEGY
+                </div>
+
+            </div>
+
+
+            <!-- INTRO CONTENT -->
+
+            <div class="intro-content">
+
+                <span class="mini-label">
+                    A LITTLE ABOUT ME
+                </span>
+
+                <h3>
+                    I like to understand
+                    <span>the story behind the numbers.</span>
+                </h3>
+
+
+                <div class="intro-text">
+
+                    <p *ngFor="let paragraph of aboutText">
+                        {{ paragraph }}
+                    </p>
+
+                </div>
+
+
+                <!-- Quick information -->
+
+                <div class="quick-info">
+
+                    <div class="quick-info-item">
+
+                        <span class="quick-icon">
+                            <i class="bi bi-mortarboard"></i>
+                        </span>
+
+                        <div>
+                            <small>EDUCATION</small>
+                            <strong>{{ profile.education }}</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-info-item">
+
+                        <span class="quick-icon">
+                            <i class="bi bi-building"></i>
+                        </span>
+
+                        <div>
+                            <small>INSTITUTION</small>
+                            <strong>{{ profile.institution }}</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-info-item">
+
+                        <span class="quick-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </span>
+
+                        <div>
+                            <small>BASED IN</small>
+                            <strong>{{ profile.location }}</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CTA -->
+
+                <div class="intro-actions">
+
+                    <!-- DOWNLOAD RESUME -->
+
+                    <a href="assets/documents/Sambhab-Resume.pdf" download="Sambhab-Resume.pdf" class="primary-action">
+                        <span>Download My Resume</span>
+                        <i class="bi bi-download"></i>
+                    </a>
+
+
+                    <!-- CONTACT -->
+
+                    <button type="button" class="secondary-action" (click)="scrollToContact()">
+                        Let's Connect
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+         AREAS OF FOCUS
+         ===================================================== -->
+
+        <div class="focus-section">
+
+            <div class="subsection-heading">
+
+                <div>
+
+                    <span class="mini-label">
+                        WHAT DRIVES ME
+                    </span>
+
+                    <h3>
+                        My areas of
+                        <span>focus</span>
+                    </h3>
+
+                </div>
+
+                <div class="subsection-decoration">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <div class="focus-grid">
+
+                <article class="focus-card" *ngFor="let area of focusAreas; let i = index" [class.card-purple]="i === 0"
+                    [class.card-cyan]="i === 1" [class.card-green]="i === 2" [class.card-blue]="i === 3">
+
+                    <div class="focus-card-glow"></div>
+
+                    <div class="focus-accent"></div>
+
+
+                    <div class="focus-card-header">
+
+                        <div class="focus-number">
+                            <span>0{{ i + 1 }}</span>
+                        </div>
+
+                        <div class="focus-icon">
+
+                            <i class="bi" [ngClass]="area.icon"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="focus-card-content">
+
+                        <h4>
+                            {{ area.title }}
+                        </h4>
+
+                        <p>
+                            {{ area.description }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="focus-card-footer">
+
+                        <span class="focus-tag">
+                            FOCUS AREA
+                        </span>
+
+                        <span class="focus-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </div>
+
+
+                    <div class="focus-corner"></div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+         ANALYTICAL MINDSET
+         ===================================================== -->
+
+        <div class="mindset-section">
+
+            <div class="mindset-content">
+
+                <span class="mini-label">
+                    MY APPROACH
+                </span>
+
+                <h3>
+                    From raw data to
+                    <span>real decisions.</span>
+                </h3>
+
+                <p>
+                    I enjoy connecting the dots between what the data
+                    says, what customers do and what a business can
+                    do next.
+                </p>
+
+            </div>
+
+
+            <div class="process-flow">
+
+                <div class="process-item">
+
+                    <span class="process-number">01</span>
+
+                    <div class="process-icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+
+                    <strong>Observe</strong>
+                    <small>Understand</small>
+
+                </div>
+
+
+                <div class="process-connector"></div>
+
+
+                <div class="process-item">
+
+                    <span class="process-number">02</span>
+
+                    <div class="process-icon cyan">
+                        <i class="bi bi-bar-chart-line"></i>
+                    </div>
+
+                    <strong>Analyze</strong>
+                    <small>Find patterns</small>
+
+                </div>
+
+
+                <div class="process-connector"></div>
+
+
+                <div class="process-item">
+
+                    <span class="process-number">03</span>
+
+                    <div class="process-icon green">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+
+                    <strong>Interpret</strong>
+                    <small>Create insight</small>
+
+                </div>
+
+
+                <div class="process-connector"></div>
+
+
+                <div class="process-item">
+
+                    <span class="process-number">04</span>
+
+                    <div class="process-icon blue">
+                        <i class="bi bi-rocket-takeoff"></i>
+                    </div>
+
+                    <strong>Act</strong>
+                    <small>Drive growth</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+         TOOLS
+         ===================================================== -->
+
+        <div class="tools-section">
+
+            <div class="subsection-heading">
+
+                <div>
+
+                    <span class="mini-label">
+                        TOOLS I WORK WITH
+                    </span>
+
+                    <h3>
+                        Turning data into
+                        <span>visual stories.</span>
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="tools-grid">
+
+                <div class="tool-card" *ngFor="let tool of tools">
+
+                    <div class="tool-icon">
+
+                        <i class="bi" [ngClass]="tool.icon"></i>
+
+                    </div>
+
+                    <div class="tool-details">
+
+                        <strong>
+                            {{ tool.name }}
+                        </strong>
+
+                        <small>
+                            {{ tool.level }}
+                        </small>
+
+                    </div>
+
+                    <i class="bi bi-arrow-up-right tool-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

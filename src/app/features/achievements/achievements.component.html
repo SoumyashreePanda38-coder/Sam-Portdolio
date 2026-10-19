@@ -1,0 +1,548 @@
+<section class="achievements-section">
+
+  <!-- =========================================
+       BACKGROUND
+  ========================================== -->
+
+  <div
+    class="achievements-background"
+    aria-hidden="true"
+  >
+
+    <div class="achievement-grid"></div>
+
+    <div class="achievement-glow glow-purple"></div>
+    <div class="achievement-glow glow-orange"></div>
+    <div class="achievement-glow glow-cyan"></div>
+    <div class="achievement-glow glow-green"></div>
+
+    <div class="achievement-orbit orbit-one"></div>
+    <div class="achievement-orbit orbit-two"></div>
+
+    <div class="achievement-watermark">
+      ACHIEVE
+    </div>
+
+  </div>
+
+
+  <div class="container achievements-container">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="achievements-header">
+
+      <div class="achievements-header-main">
+
+        <div class="section-kicker">
+
+          <span class="kicker-line"></span>
+
+          ACHIEVEMENTS &amp; PARTICIPATION
+
+        </div>
+
+
+        <h2>
+
+          More than
+          <span>just winning.</span>
+
+        </h2>
+
+
+        <p>
+
+          Competitions, sports, teamwork and
+          leadership experiences that shaped
+          Sambhab beyond the classroom.
+
+        </p>
+
+      </div>
+
+
+      <div class="achievements-header-side">
+
+        <strong>
+          05
+        </strong>
+
+        <span>
+          KEY MOMENTS
+        </span>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         FEATURED ACHIEVEMENT AREA
+    ========================================== -->
+
+    <div class="achievement-showcase">
+
+
+      <!-- =====================================
+           LEFT — STORY
+      ====================================== -->
+
+      <div class="achievement-story">
+
+        <div class="story-topline">
+
+          <span>
+            01
+          </span>
+
+          <span class="story-line"></span>
+
+          <span>
+            PARTICIPATION • SPORT • LEADERSHIP
+          </span>
+
+        </div>
+
+
+        <div class="story-icon">
+
+          <i class="bi bi-stars"></i>
+
+        </div>
+
+
+        <span class="story-label">
+          A JOURNEY OF INVOLVEMENT
+        </span>
+
+
+        <h3>
+
+          From the
+          <span>field</span>
+          to the
+          <span>stage.</span>
+
+        </h3>
+
+
+        <p>
+
+          Sambhab has actively participated in
+          college events, business competitions,
+          sports and student leadership — building
+          experiences through teamwork, competition
+          and responsibility.
+
+        </p>
+
+
+        <!-- =====================================
+             HIGHLIGHT STATS
+        ====================================== -->
+
+        <div class="achievement-stats">
+
+          <div class="achievement-stat">
+
+            <strong>
+              1<sup>st</sup>
+            </strong>
+
+            <span>
+              PAKSHALA
+            </span>
+
+          </div>
+
+
+          <div class="achievement-stat">
+
+            <strong>
+              ₹10K
+            </strong>
+
+            <span>
+              PRIZE
+            </span>
+
+          </div>
+
+
+          <div class="achievement-stat">
+
+            <strong>
+              15+
+            </strong>
+
+            <span>
+              TEAMS
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             WINNING NOTE
+        ====================================== -->
+
+        <div class="winning-note">
+
+          <div class="winning-icon">
+
+            <i class="bi bi-trophy-fill"></i>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              HIGHLIGHT
+            </span>
+
+            <strong>
+              Wrap &amp; Crunch — 1st Position
+            </strong>
+
+            <p>
+              Brahmastra 2026 · Pakshala
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =====================================
+           RIGHT — IMAGE CAROUSEL
+      ====================================== -->
+
+      <div
+        class="achievement-gallery"
+
+        (mouseenter)="stopAutoPlay()"
+        (mouseleave)="startAutoPlay()"
+      >
+
+        <div class="gallery-frame">
+
+
+          <!-- IMAGE SLIDES -->
+
+          <div
+            *ngFor="
+              let image of achievementImages;
+              let i = index;
+              trackBy: trackByImage
+            "
+            class="gallery-slide"
+            [class.active]="i === currentImageIndex"
+          >
+
+            <img
+              [src]="image"
+              alt="Sambhab achievement and college participation"
+            />
+
+          </div>
+
+
+          <!-- DARK OVERLAY -->
+
+          <div class="gallery-shade"></div>
+
+
+          <!-- TOP LABEL -->
+
+          <div class="gallery-top">
+
+            <span class="gallery-tag">
+
+              <i class="bi bi-camera-fill"></i>
+
+              ACHIEVEMENT GALLERY
+
+            </span>
+
+
+            <span class="gallery-counter">
+
+              {{ currentImageIndex + 1 | number:'2.0-0' }}
+
+              /
+
+              {{ achievementImages.length | number:'2.0-0' }}
+
+            </span>
+
+          </div>
+
+
+          <!-- IMAGE CORNER -->
+
+          <div class="gallery-corner"></div>
+
+
+          <!-- PREVIOUS -->
+
+          <button
+            type="button"
+            class="gallery-control gallery-prev"
+            (click)="previousImage()"
+            aria-label="Previous achievement image"
+          >
+
+            <i class="bi bi-arrow-left"></i>
+
+          </button>
+
+
+          <!-- NEXT -->
+
+          <button
+            type="button"
+            class="gallery-control gallery-next"
+            (click)="nextImage()"
+            aria-label="Next achievement image"
+          >
+
+            <i class="bi bi-arrow-right"></i>
+
+          </button>
+
+
+          <!-- BOTTOM IMAGE INFO -->
+
+          <div class="gallery-bottom">
+
+            <span>
+              MOMENT
+            </span>
+
+            <strong>
+              {{ currentImageIndex + 1 | number:'2.0-0' }}
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- DOTS -->
+
+        <div class="gallery-navigation">
+
+          <button
+            *ngFor="
+              let image of achievementImages;
+              let i = index;
+              trackBy: trackByImage
+            "
+            type="button"
+            class="gallery-dot"
+            [class.active]="i === currentImageIndex"
+            [attr.aria-label]="
+              'Show achievement image ' + (i + 1)
+            "
+            (click)="goToImage(i)"
+          ></button>
+
+        </div>
+
+
+        <div class="gallery-footer">
+
+          <span>
+
+            <i class="bi bi-images"></i>
+
+            COLLEGE MOMENTS
+
+          </span>
+
+
+          <span>
+            AUTO PLAY
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         ACHIEVEMENT TIMELINE
+    ========================================== -->
+
+    <div class="achievement-timeline-section">
+
+
+      <div class="timeline-heading">
+
+        <div>
+
+          <span>
+            THE JOURNEY
+          </span>
+
+          <h3>
+            Moments that
+            <strong>stand out.</strong>
+          </h3>
+
+        </div>
+
+
+        <p>
+          Every experience added something different:
+          competition, teamwork, sport or leadership.
+        </p>
+
+      </div>
+
+
+
+      <div class="achievement-timeline">
+
+        <div
+          class="achievement-card"
+          *ngFor="
+            let achievement of achievements;
+            let i = index;
+            trackBy: trackByAchievement
+          "
+          [class.card-gold]="achievement.accent === 'gold'"
+          [class.card-orange]="achievement.accent === 'orange'"
+          [class.card-green]="achievement.accent === 'green'"
+          [class.card-cyan]="achievement.accent === 'cyan'"
+          [class.card-magenta]="achievement.accent === 'magenta'"
+        >
+
+          <!-- TIMELINE NODE -->
+
+          <div class="timeline-node">
+
+            <i
+              class="bi"
+              [ngClass]="achievement.icon"
+            ></i>
+
+          </div>
+
+
+          <!-- NUMBER -->
+
+          <div class="achievement-number">
+
+            {{ i + 1 | number:'2.0-0' }}
+
+          </div>
+
+
+          <!-- CONTENT -->
+
+          <div class="achievement-card-content">
+
+            <div class="achievement-card-top">
+
+              <span class="achievement-category">
+
+                {{ achievement.category }}
+
+              </span>
+
+
+              <span class="achievement-year">
+
+                {{ achievement.year }}
+
+              </span>
+
+            </div>
+
+
+            <h4>
+              {{ achievement.title }}
+            </h4>
+
+
+            <div class="achievement-event">
+
+              <i class="bi bi-geo-alt-fill"></i>
+
+              {{ achievement.event }}
+
+            </div>
+
+
+            <p>
+              {{ achievement.description }}
+            </p>
+
+
+            <div class="achievement-card-line"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         CLOSING STRIP
+    ========================================== -->
+
+    <div class="achievement-closing">
+
+      <div class="closing-icon">
+
+        <i class="bi bi-lightning-charge-fill"></i>
+
+      </div>
+
+
+      <div class="closing-text">
+
+        <span>
+          BEYOND THE CLASSROOM
+        </span>
+
+        <strong>
+          Participate. Compete. Lead. Learn.
+        </strong>
+
+      </div>
+
+
+      <div class="closing-accent">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

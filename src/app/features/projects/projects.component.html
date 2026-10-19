@@ -1,0 +1,887 @@
+<section class="projects-section">
+
+  <!-- =========================================
+       BACKGROUND
+  ========================================== -->
+
+  <div class="projects-background" aria-hidden="true">
+
+    <div class="projects-grid"></div>
+
+    <div class="ambient-glow glow-purple"></div>
+    <div class="ambient-glow glow-cyan"></div>
+    <div class="ambient-glow glow-green"></div>
+
+    <div class="background-orbit orbit-one"></div>
+    <div class="background-orbit orbit-two"></div>
+
+    <div class="projects-watermark">
+      PROJECTS
+    </div>
+
+  </div>
+
+
+  <div class="container projects-container">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="projects-header">
+
+      <div class="header-main">
+
+        <div class="section-kicker">
+          <span class="kicker-line"></span>
+          SELECTED WORK
+        </div>
+
+        <h2>
+          Projects that
+          <span>show my work.</span>
+        </h2>
+
+        <p>
+          From sales dashboards to financial modelling,
+          these projects reflect how I work with data,
+          business ideas and practical analysis.
+        </p>
+
+      </div>
+
+
+      <div class="header-side">
+
+        <div class="project-total">
+          <strong>05</strong>
+          <span>PROJECTS</span>
+        </div>
+
+        <div class="header-line"></div>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         FEATURED PROJECTS
+    ========================================== -->
+
+    <div class="featured-projects">
+
+
+      <!-- =====================================
+           PROJECT 01
+      ====================================== -->
+
+      <article class="featured-project coffee-project">
+
+        <div class="project-content">
+
+          <div class="project-meta">
+
+            <span class="project-number">
+              01
+            </span>
+
+            <span class="project-category">
+              DATA ANALYTICS
+            </span>
+
+          </div>
+
+
+          <div class="project-icon">
+            <i class="bi bi-cup-hot-fill"></i>
+          </div>
+
+
+          <h3>
+            Coffee Shop
+            <span>Sales Dashboard</span>
+          </h3>
+
+
+          <p class="project-description">
+            A sales dashboard created to organise sales
+            data and present useful business insights
+            through clear visuals.
+          </p>
+
+
+          <div class="tool-list">
+
+            <span>
+              <i class="bi bi-file-earmark-spreadsheet"></i>
+              Excel
+            </span>
+
+            <span>
+              <i class="bi bi-table"></i>
+              Pivot Tables
+            </span>
+
+            <span>
+              <i class="bi bi-bar-chart-fill"></i>
+              Visualization
+            </span>
+
+          </div>
+
+
+          <div class="project-points">
+
+            <div>
+              <i class="bi bi-check2"></i>
+              Sales analysis
+            </div>
+
+            <div>
+              <i class="bi bi-check2"></i>
+              Performance view
+            </div>
+
+            <div>
+              <i class="bi bi-check2"></i>
+              Data visualization
+            </div>
+
+          </div>
+
+
+          <div class="project-footer">
+
+            <span>
+              EXCEL PROJECT
+            </span>
+
+            <i class="bi bi-arrow-up-right"></i>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- IMAGE CAROUSEL -->
+
+        <div
+          class="project-visual"
+          (mouseenter)="stopCoffeeAutoPlay()"
+          (mouseleave)="startCoffeeAutoPlay()"
+        >
+
+          <div class="visual-frame">
+
+            <div
+              *ngFor="
+                let image of coffeeImages;
+                let i = index;
+                trackBy: trackByImage
+              "
+              class="visual-slide"
+              [class.active]="i === coffeeIndex"
+            >
+
+              <img
+                [src]="image"
+                alt="Coffee Shop Sales Dashboard"
+              />
+
+            </div>
+
+
+            <div class="visual-shade"></div>
+
+
+            <div class="visual-label">
+
+              <i class="bi bi-bar-chart-fill"></i>
+
+              SALES DASHBOARD
+
+            </div>
+
+
+            <div class="visual-counter">
+
+              {{ coffeeIndex + 1 | number:'2.0-0' }}
+
+              /
+
+              {{ coffeeImages.length | number:'2.0-0' }}
+
+            </div>
+
+
+            <button
+              type="button"
+              class="visual-control control-prev"
+              (click)="previousCoffeeImage()"
+              aria-label="Previous coffee dashboard image"
+            >
+
+              <i class="bi bi-chevron-left"></i>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="visual-control control-next"
+              (click)="nextCoffeeImage()"
+              aria-label="Next coffee dashboard image"
+            >
+
+              <i class="bi bi-chevron-right"></i>
+
+            </button>
+
+          </div>
+
+
+          <div class="visual-dots">
+
+            <button
+              *ngFor="
+                let image of coffeeImages;
+                let i = index;
+                trackBy: trackByImage
+              "
+              type="button"
+              [class.active]="i === coffeeIndex"
+              (click)="goToCoffeeImage(i)"
+              [attr.aria-label]="'Coffee image ' + (i + 1)"
+            ></button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================
+           PROJECT 02
+      ====================================== -->
+
+      <article class="featured-project ecommerce-project">
+
+        <div class="project-content">
+
+          <div class="project-meta">
+
+            <span class="project-number">
+              02
+            </span>
+
+            <span class="project-category">
+              BUSINESS ANALYTICS
+            </span>
+
+          </div>
+
+
+          <div class="project-icon">
+            <i class="bi bi-cart3"></i>
+          </div>
+
+
+          <h3>
+            E-Commerce Sales
+            <span>Analytics Dashboard</span>
+          </h3>
+
+
+          <p class="project-description">
+            A Power BI dashboard focused on cleaning,
+            analysing and presenting e-commerce sales
+            data in an easy-to-read format.
+          </p>
+
+
+          <div class="tool-list">
+
+            <span>
+              <i class="bi bi-bar-chart-fill"></i>
+              Power BI
+            </span>
+
+            <span>
+              <i class="bi bi-funnel-fill"></i>
+              Data Cleaning
+            </span>
+
+            <span>
+              <i class="bi bi-graph-up-arrow"></i>
+              Visualization
+            </span>
+
+          </div>
+
+
+          <div class="project-points">
+
+            <div>
+              <i class="bi bi-check2"></i>
+              Sales analysis
+            </div>
+
+            <div>
+              <i class="bi bi-check2"></i>
+              Interactive dashboard
+            </div>
+
+            <div>
+              <i class="bi bi-check2"></i>
+              Business insights
+            </div>
+
+          </div>
+
+
+          <div class="project-footer">
+
+            <span>
+              POWER BI PROJECT
+            </span>
+
+            <i class="bi bi-arrow-up-right"></i>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- IMAGE CAROUSEL -->
+
+        <div
+          class="project-visual"
+          (mouseenter)="stopEcommerceAutoPlay()"
+          (mouseleave)="startEcommerceAutoPlay()"
+        >
+
+          <div class="visual-frame">
+
+            <div
+              *ngFor="
+                let image of ecommerceImages;
+                let i = index;
+                trackBy: trackByImage
+              "
+              class="visual-slide"
+              [class.active]="i === ecommerceIndex"
+            >
+
+              <img
+                [src]="image"
+                alt="E-Commerce Sales Analytics Dashboard"
+              />
+
+            </div>
+
+
+            <div class="visual-shade"></div>
+
+
+            <div class="visual-label">
+
+              <i class="bi bi-bar-chart-fill"></i>
+
+              POWER BI
+
+            </div>
+
+
+            <div class="visual-counter">
+
+              {{ ecommerceIndex + 1 | number:'2.0-0' }}
+
+              /
+
+              {{ ecommerceImages.length | number:'2.0-0' }}
+
+            </div>
+
+
+            <button
+              type="button"
+              class="visual-control control-prev"
+              (click)="previousEcommerceImage()"
+              aria-label="Previous e-commerce dashboard image"
+            >
+
+              <i class="bi bi-chevron-left"></i>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="visual-control control-next"
+              (click)="nextEcommerceImage()"
+              aria-label="Next e-commerce dashboard image"
+            >
+
+              <i class="bi bi-chevron-right"></i>
+
+            </button>
+
+          </div>
+
+
+          <div class="visual-dots">
+
+            <button
+              *ngFor="
+                let image of ecommerceImages;
+                let i = index;
+                trackBy: trackByImage
+              "
+              type="button"
+              [class.active]="i === ecommerceIndex"
+              (click)="goToEcommerceImage(i)"
+              [attr.aria-label]="'E-commerce image ' + (i + 1)"
+            ></button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================
+           PROJECT 03 — FINANCIAL MODELLING
+      ====================================== -->
+
+      <article class="featured-project dcf-project">
+
+        <div class="project-content">
+
+          <div class="project-meta">
+
+            <span class="project-number">
+              03
+            </span>
+
+            <span class="project-category">
+              FINANCIAL MODELLING
+            </span>
+
+          </div>
+
+
+          <div class="project-icon">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+
+
+          <h3>
+            DCF Model
+            <span>Valuation</span>
+          </h3>
+
+
+          <p class="project-description">
+            A financial modelling project built around
+            discounted cash flow valuation and the
+            analysis of a company's future value.
+          </p>
+
+
+          <div class="tool-list">
+
+            <span>
+              <i class="bi bi-file-earmark-spreadsheet"></i>
+              Excel
+            </span>
+
+            <span>
+              <i class="bi bi-calculator"></i>
+              Financial Modelling
+            </span>
+
+            <span>
+              <i class="bi bi-graph-up"></i>
+              Valuation
+            </span>
+
+          </div>
+
+
+          <div class="project-points">
+
+            <div>
+              <i class="bi bi-check2"></i>
+              Cash flow projections
+            </div>
+
+            <div>
+              <i class="bi bi-check2"></i>
+              Discounted cash flow
+            </div>
+
+            <div>
+              <i class="bi bi-check2"></i>
+              Valuation analysis
+            </div>
+
+          </div>
+
+
+          <div class="project-footer">
+
+            <span>
+              FINANCIAL MODELLING PROJECT
+            </span>
+
+            <i class="bi bi-arrow-up-right"></i>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             FINANCIAL MODELLING IMAGE CAROUSEL
+        ====================================== -->
+
+        <div
+          class="project-visual financial-visual"
+          (mouseenter)="stopFinancialAutoPlay()"
+          (mouseleave)="startFinancialAutoPlay()"
+        >
+
+          <div class="visual-frame">
+
+
+            <!-- Financial Images -->
+
+            <div
+              *ngFor="
+                let image of financialImages;
+                let i = index;
+                trackBy: trackByImage
+              "
+              class="visual-slide"
+              [class.active]="i === financialIndex"
+            >
+
+              <img
+                [src]="image"
+                alt="DCF Financial Modelling and Valuation Project"
+              />
+
+            </div>
+
+
+            <!-- Image Shade -->
+
+            <div class="visual-shade"></div>
+
+
+            <!-- Label -->
+
+            <div class="visual-label">
+
+              <i class="bi bi-calculator-fill"></i>
+
+              DCF FINANCIAL MODEL
+
+            </div>
+
+
+            <!-- Counter -->
+
+            <div class="visual-counter">
+
+              {{ financialIndex + 1 | number:'2.0-0' }}
+
+              /
+
+              {{ financialImages.length | number:'2.0-0' }}
+
+            </div>
+
+
+            <!-- Previous -->
+
+            <button
+              type="button"
+              class="visual-control control-prev"
+              (click)="previousFinancialImage()"
+              aria-label="Previous financial modelling image"
+            >
+
+              <i class="bi bi-chevron-left"></i>
+
+            </button>
+
+
+            <!-- Next -->
+
+            <button
+              type="button"
+              class="visual-control control-next"
+              (click)="nextFinancialImage()"
+              aria-label="Next financial modelling image"
+            >
+
+              <i class="bi bi-chevron-right"></i>
+
+            </button>
+
+          </div>
+
+
+          <!-- Financial Carousel Dots -->
+
+          <div class="visual-dots">
+
+            <button
+              *ngFor="
+                let image of financialImages;
+                let i = index;
+                trackBy: trackByImage
+              "
+              type="button"
+              [class.active]="i === financialIndex"
+              (click)="goToFinancialImage(i)"
+              [attr.aria-label]="'Financial modelling image ' + (i + 1)"
+            ></button>
+
+          </div>
+
+
+          <!-- Financial Carousel Footer -->
+
+          <div class="financial-carousel-footer">
+
+            <span>
+              <i class="bi bi-images"></i>
+              MODEL PREVIEW
+            </span>
+
+            <span>
+              07 SLIDES
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+
+    <!-- =========================================
+         OTHER PROJECTS
+    ========================================== -->
+
+    <div class="other-heading">
+
+      <div>
+
+        <span>
+          04 — 05
+        </span>
+
+        <h3>
+          More projects
+        </h3>
+
+      </div>
+
+
+      <p>
+        Other academic and practical work
+        that shaped my business skills.
+      </p>
+
+    </div>
+
+
+
+    <div class="other-projects">
+
+
+      <!-- =====================================
+           BIG CUP CAFE
+      ====================================== -->
+
+      <article class="small-project branding-project">
+
+        <div class="small-project-number">
+          04
+        </div>
+
+
+        <div class="small-project-icon">
+
+          <i class="bi bi-megaphone-fill"></i>
+
+        </div>
+
+
+        <span class="small-category">
+          DIGITAL BRANDING
+        </span>
+
+
+        <h4>
+          Big Cup Cafe
+        </h4>
+
+
+        <p>
+          A live branding project focused on business
+          presentation and social media presence.
+        </p>
+
+
+        <div class="small-tags">
+
+          <span>
+            Business Presentation
+          </span>
+
+          <span>
+            Social Media
+          </span>
+
+          <span>
+            Live Project
+          </span>
+
+        </div>
+
+
+        <div class="small-footer">
+
+          <span>
+            BRANDING
+          </span>
+
+          <i class="bi bi-arrow-up-right"></i>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================
+           CAPSTONE
+      ====================================== -->
+
+      <article class="small-project capstone-project">
+
+        <div class="small-project-number">
+          05
+        </div>
+
+
+        <div class="small-project-icon">
+
+          <i class="bi bi-lightbulb-fill"></i>
+
+        </div>
+
+
+        <span class="small-category">
+          BUSINESS PROJECT
+        </span>
+
+
+        <h4>
+          Capstone Project
+        </h4>
+
+
+        <p>
+          A market survey and digital platform project
+          built around practical research and findings.
+        </p>
+
+
+        <div class="small-tags">
+
+          <span>
+            Market Survey
+          </span>
+
+          <span>
+            Research
+          </span>
+
+          <span>
+            Digital Platform
+          </span>
+
+        </div>
+
+
+        <div class="small-footer">
+
+          <span>
+            CAPSTONE
+          </span>
+
+          <i class="bi bi-arrow-up-right"></i>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+
+    <!-- =========================================
+         BOTTOM STORY
+    ========================================== -->
+
+    <div class="projects-story">
+
+      <div class="story-icon">
+
+        <i class="bi bi-diagram-3-fill"></i>
+
+      </div>
+
+
+      <div class="story-text">
+
+        <span>
+          WHAT THESE PROJECTS SHOW
+        </span>
+
+        <strong>
+          Data → Analysis → Business Thinking
+        </strong>
+
+      </div>
+
+
+      <div class="story-end">
+
+        <i class="bi bi-arrow-right"></i>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,306 @@
+<footer class="portfolio-footer">
+
+  <!-- Decorative background -->
+  <div class="footer-grid"></div>
+
+  <div class="footer-glow footer-glow-purple"></div>
+  <div class="footer-glow footer-glow-cyan"></div>
+  <div class="footer-glow footer-glow-green"></div>
+
+
+  <div class="footer-container">
+
+    <!-- =====================================================
+         TOP CTA
+         ===================================================== -->
+
+    <section class="footer-cta">
+
+      <div class="cta-content">
+
+        <span class="cta-label">
+          <span class="cta-dot"></span>
+          LET'S CONNECT
+        </span>
+
+        <h2>
+          Let's turn ideas into
+          <span>meaningful results.</span>
+        </h2>
+
+        <p>
+          Interested in marketing analytics, business strategy,
+          data-driven insights or collaboration?
+          Let's connect and create something valuable.
+        </p>
+
+      </div>
+
+      <button
+        type="button"
+        class="cta-button"
+        (click)="goToContact()"
+      >
+        <span>Let's Talk</span>
+        <i class="bi bi-arrow-up-right"></i>
+      </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         DIVIDER
+         ===================================================== -->
+
+    <div class="footer-divider">
+      <span></span>
+    </div>
+
+
+    <!-- =====================================================
+         MAIN FOOTER
+         ===================================================== -->
+
+    <section class="footer-main">
+
+      <!-- ================= BRAND ================= -->
+
+      <div class="footer-brand">
+
+        <div class="footer-logo">
+          <span>S</span>
+          <span>S</span>
+
+          <div class="logo-orbit orbit-a"></div>
+          <div class="logo-orbit orbit-b"></div>
+        </div>
+
+        <div class="footer-brand-info">
+
+          <h3>Sambhab Shree Sahoo</h3>
+
+          <span>
+            Marketing · Analytics · Strategy
+          </span>
+
+        </div>
+
+
+        <p class="footer-description">
+          MBA Marketing & Finance student passionate about
+          market research, consumer behaviour, brand promotion
+          and turning data into actionable business insights.
+        </p>
+
+
+        <!-- Social Links -->
+
+        <div class="social-links">
+
+          <a
+            href="https://www.linkedin.com/in/sambhabshreesahoo-mba"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="social-link linkedin"
+          >
+            <i class="bi bi-linkedin"></i>
+          </a>
+
+          <a
+            href="mailto:sambhab307@gmail.com"
+            aria-label="Email"
+            class="social-link email"
+          >
+            <i class="bi bi-envelope"></i>
+          </a>
+
+          <a
+            href="tel:+918018318024"
+            aria-label="Phone"
+            class="social-link phone"
+          >
+            <i class="bi bi-telephone"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= QUICK LINKS ================= -->
+
+      <div class="footer-column">
+
+        <span class="column-title">
+          NAVIGATION
+        </span>
+
+        <div class="footer-links">
+
+          <a
+            *ngFor="let link of quickLinks"
+            [routerLink]="link.route"
+            (click)="navigateTo(link.route)"
+          >
+            <span>{{ link.label }}</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= EXPERTISE ================= -->
+
+      <div class="footer-column expertise-column">
+
+        <span class="column-title">
+          FOCUS AREAS
+        </span>
+
+        <div class="expertise-list">
+
+          <div class="expertise-item">
+            <span class="expertise-icon">
+              <i class="bi bi-bar-chart-line"></i>
+            </span>
+
+            <div>
+              <strong>Marketing Analytics</strong>
+              <small>Data-driven insights</small>
+            </div>
+          </div>
+
+
+          <div class="expertise-item">
+            <span class="expertise-icon">
+              <i class="bi bi-people"></i>
+            </span>
+
+            <div>
+              <strong>Consumer Behaviour</strong>
+              <small>Understanding customers</small>
+            </div>
+          </div>
+
+
+          <div class="expertise-item">
+            <span class="expertise-icon">
+              <i class="bi bi-megaphone"></i>
+            </span>
+
+            <div>
+              <strong>Brand Promotion</strong>
+              <small>Building visibility</small>
+            </div>
+          </div>
+
+
+          <div class="expertise-item">
+            <span class="expertise-icon">
+              <i class="bi bi-graph-up-arrow"></i>
+            </span>
+
+            <div>
+              <strong>Business Strategy</strong>
+              <small>Insight to action</small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= CONTACT ================= -->
+
+      <div class="footer-column contact-column">
+
+        <span class="column-title">
+          GET IN TOUCH
+        </span>
+
+        <div class="contact-info">
+
+          <a href="mailto:sambhab307@gmail.com">
+            <span class="contact-icon">
+              <i class="bi bi-envelope"></i>
+            </span>
+
+            <div>
+              <small>Email</small>
+              <strong>sambhab307@gmail.com</strong>
+            </div>
+          </a>
+
+
+          <a href="tel:+918018318024">
+            <span class="contact-icon">
+              <i class="bi bi-telephone"></i>
+            </span>
+
+            <div>
+              <small>Phone</small>
+              <strong>+91 80183 18024</strong>
+            </div>
+          </a>
+
+
+          <div class="location-info">
+
+            <span class="contact-icon">
+              <i class="bi bi-geo-alt"></i>
+            </span>
+
+            <div>
+              <small>Location</small>
+              <strong>Bhubaneswar, Odisha</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOTTOM BAR
+         ===================================================== -->
+
+    <div class="footer-bottom">
+
+      <div class="copyright">
+        <span>© {{ currentYear }}</span>
+        <strong>Sambhab Shree Sahoo</strong>
+        <span>All rights reserved.</span>
+      </div>
+
+
+      <div class="footer-status">
+
+        <span class="status-indicator"></span>
+
+        <span>Open to Opportunities</span>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="back-to-top"
+        (click)="scrollToTop()"
+        aria-label="Back to top"
+      >
+        <i class="bi bi-arrow-up"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+</footer>

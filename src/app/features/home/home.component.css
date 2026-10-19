@@ -1,0 +1,1441 @@
+/* =========================================================
+   HERO SECTION
+   Purple + Cyan + Emerald Neon Glass
+========================================================= */
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(124, 58, 237, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(16, 185, 129, 0.15),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050713 0%,
+            #08091b 45%,
+            #06131a 100%
+        );
+
+    color: #ffffff;
+
+    padding: 110px 0 80px;
+}
+
+
+/* =========================================================
+   BACKGROUND EFFECTS
+========================================================= */
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(139, 92, 246, 0.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(59, 130, 246, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 65px 65px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+    );
+
+    pointer-events: none;
+}
+
+.ambient {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    opacity: 0.45;
+}
+
+.ambient-one {
+    width: 280px;
+    height: 280px;
+
+    background: #7c3aed;
+
+    top: -100px;
+    left: -80px;
+
+    animation:
+        ambientMoveOne 10s ease-in-out infinite alternate;
+}
+
+.ambient-two {
+    width: 300px;
+    height: 300px;
+
+    background: #06b6d4;
+
+    right: -100px;
+    top: 20%;
+
+    animation:
+        ambientMoveTwo 12s ease-in-out infinite alternate;
+}
+
+.ambient-three {
+    width: 220px;
+    height: 220px;
+
+    background: #10b981;
+
+    bottom: -100px;
+    left: 45%;
+
+    animation:
+        ambientMoveThree 9s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.hero-container {
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   AVAILABILITY BADGE
+========================================================= */
+
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 15px;
+
+    margin-bottom: 25px;
+
+    border:
+        1px solid rgba(52, 211, 153, 0.25);
+
+    border-radius: 50px;
+
+    background:
+        rgba(16, 185, 129, 0.07);
+
+    backdrop-filter: blur(14px);
+
+    color: #a7f3d0;
+
+    font-size: 0.78rem;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #34d399;
+
+    box-shadow:
+        0 0 8px #34d399,
+        0 0 18px rgba(52, 211, 153, 0.7);
+
+    animation:
+        pulseDot 2s infinite;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-line {
+    margin: 0 0 5px;
+
+    color: #a78bfa;
+
+    font-size: 1rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.hero-name {
+    margin: 0;
+
+    font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        sans-serif;
+
+    font-size:
+        clamp(3.5rem, 7vw, 6.5rem);
+
+    line-height: 0.95;
+
+    font-weight: 800;
+
+    letter-spacing: -4px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 35px rgba(139, 92, 246, 0.16);
+}
+
+.hero-name span {
+    display: block;
+
+    background:
+        linear-gradient(
+            100deg,
+            #a78bfa 0%,
+            #22d3ee 45%,
+            #34d399 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    background-size: 200% auto;
+
+    animation:
+        gradientFlow 5s ease infinite;
+}
+
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.role-wrapper {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+.role-line {
+    width: 45px;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #22d3ee
+        );
+
+    box-shadow:
+        0 0 10px rgba(34, 211, 238, 0.5);
+}
+
+.role-wrapper h2 {
+    margin: 0;
+
+    font-size:
+        clamp(1.15rem, 2vw, 1.45rem);
+
+    font-weight: 500;
+
+    letter-spacing: 0.4px;
+
+    color: #dbeafe;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description {
+    max-width: 680px;
+
+    margin: 28px 0 0;
+
+    color: #cbd5e1;
+
+    font-size: 1.05rem;
+
+    line-height: 1.85;
+
+    font-weight: 400;
+}
+
+.hero-description strong {
+    color: #67e8f9;
+
+    font-weight: 600;
+}
+
+.secondary-description {
+    margin-top: 8px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.btn-primary-neon,
+.btn-outline-glass {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 11px;
+
+    padding: 13px 22px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 0.92rem;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.btn-primary-neon {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            110deg,
+            #7c3aed,
+            #2563eb
+        );
+
+    border:
+        1px solid rgba(167, 139, 250, 0.5);
+
+    box-shadow:
+        0 10px 35px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary-neon:hover {
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 45px rgba(124, 58, 237, 0.45);
+}
+
+.btn-outline-glass {
+    color: #dbeafe;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(148, 163, 184, 0.25);
+
+    backdrop-filter: blur(12px);
+}
+
+.btn-outline-glass:hover {
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(34, 211, 238, 0.55);
+
+    box-shadow:
+        0 0 25px rgba(34, 211, 238, 0.12);
+}
+
+
+/* =========================================================
+   QUICK STATS
+========================================================= */
+
+.quick-stats {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+
+    margin-top: 45px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.stat-number {
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c4b5fd,
+            #67e8f9
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.stat-label {
+    color: #64748b;
+
+    font-size: 0.68rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 35px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(148, 163, 184, 0.35),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   PROFILE VISUAL
+========================================================= */
+
+.profile-visual {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    min-height: 600px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.orbit {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(139, 92, 246, 0.16);
+
+    transform: rotate(-20deg);
+
+    pointer-events: none;
+}
+
+.orbit-one {
+    width: 430px;
+    height: 550px;
+
+    animation:
+        orbitRotate 18s linear infinite;
+}
+
+.orbit-two {
+    width: 370px;
+    height: 490px;
+
+    border-color:
+        rgba(34, 211, 238, 0.13);
+
+    animation:
+        orbitRotateReverse 15s linear infinite;
+}
+
+
+/* =========================================================
+   PROFILE FRAME
+   Image: 1004 × 1567
+   Natural ratio ≈ 0.641
+========================================================= */
+
+.profile-frame {
+    position: relative;
+
+    width: 300px;
+    height: 468px;
+
+    padding: 8px;
+
+    border-radius:
+        150px 150px 35px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139, 92, 246, 0.65),
+            rgba(34, 211, 238, 0.45),
+            rgba(16, 185, 129, 0.5)
+        );
+
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.06),
+        0 0 60px rgba(124, 58, 237, 0.25),
+        0 0 100px rgba(34, 211, 238, 0.08);
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   PROFILE GLOW
+========================================================= */
+
+.profile-glow {
+    position: absolute;
+
+    inset: -20px;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #22d3ee,
+            #10b981
+        );
+
+    filter: blur(35px);
+
+    opacity: 0.22;
+
+    z-index: -1;
+
+    animation:
+        glowPulse 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE WRAPPER
+========================================================= */
+
+.profile-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius:
+        142px 142px 27px 27px;
+
+    background: #0f172a;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(20px);
+}
+
+
+/* =========================================================
+   ACTUAL PROFILE IMAGE
+========================================================= */
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    /*
+       The frame ratio is almost identical
+       to the original 1004 × 1567 photo.
+    */
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    border-radius: inherit;
+}
+
+
+/* =========================================================
+   PROFILE RING
+========================================================= */
+
+.profile-ring {
+    position: absolute;
+
+    inset: 14px;
+
+    border-radius:
+        136px 136px 20px 20px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.floating-card {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 16px;
+
+    background:
+        rgba(10, 15, 35, 0.62);
+
+    border:
+        1px solid rgba(148, 163, 184, 0.15);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+
+    z-index: 8;
+
+    animation:
+        floatingCard 4s ease-in-out infinite;
+}
+
+.floating-card span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 0.65rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+.floating-card strong {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #e2e8f0;
+
+    font-size: 0.8rem;
+}
+
+.floating-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(124, 58, 237, 0.12);
+
+    color: #a78bfa;
+
+    font-size: 1rem;
+}
+
+.analytics-card {
+    top: 75px;
+    left: -5px;
+}
+
+.strategy-card {
+    right: -5px;
+    bottom: 145px;
+
+    animation-delay: 1.3s;
+}
+
+.strategy-card .floating-icon {
+    color: #34d399;
+
+    background:
+        rgba(16, 185, 129, 0.1);
+}
+
+
+/* =========================================================
+   IDENTITY CARD
+========================================================= */
+
+.identity-card {
+    position: absolute;
+
+    bottom: 8px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 310px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 16px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(8, 15, 30, 0.78);
+
+    border:
+        1px solid rgba(103, 232, 249, 0.14);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.3);
+
+    z-index: 9;
+}
+
+.identity-icon {
+    flex-shrink: 0;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.2),
+            rgba(34, 211, 238, 0.12)
+        );
+
+    color: #a78bfa;
+}
+
+.identity-content {
+    min-width: 0;
+}
+
+.identity-content span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 0.62rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+.identity-content strong {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #e2e8f0;
+
+    font-size: 0.75rem;
+}
+
+.identity-content small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #64748b;
+
+    font-size: 0.62rem;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #475569;
+
+    font-size: 0.65rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    z-index: 5;
+}
+
+.scroll-line {
+    width: 45px;
+    height: 1px;
+
+    background:
+        rgba(100, 116, 139, 0.35);
+
+    position: relative;
+}
+
+.scroll-line span {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 16px;
+    height: 1px;
+
+    background: #22d3ee;
+
+    box-shadow:
+        0 0 8px #22d3ee;
+
+    animation:
+        scrollLine 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+@keyframes pulseDot {
+    0%,
+    100% {
+        box-shadow:
+            0 0 8px #34d399,
+            0 0 18px rgba(52, 211, 153, 0.7);
+    }
+
+    50% {
+        box-shadow:
+            0 0 4px #34d399,
+            0 0 8px rgba(52, 211, 153, 0.3);
+    }
+}
+
+@keyframes ambientMoveOne {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(70px, 50px);
+    }
+}
+
+@keyframes ambientMoveTwo {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-60px, 60px);
+    }
+}
+
+@keyframes ambientMoveThree {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(50px, -40px);
+    }
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(-20deg);
+    }
+
+    to {
+        transform: rotate(340deg);
+    }
+}
+
+@keyframes orbitRotateReverse {
+    from {
+        transform: rotate(20deg);
+    }
+
+    to {
+        transform: rotate(-340deg);
+    }
+}
+
+@keyframes floatingCard {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glowPulse {
+    0%,
+    100% {
+        opacity: 0.18;
+    }
+
+    50% {
+        opacity: 0.32;
+    }
+}
+
+@keyframes scrollLine {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 65%;
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .hero-section {
+        padding-top: 130px;
+        padding-bottom: 90px;
+    }
+
+    .hero-name {
+        font-size:
+            clamp(3.4rem, 10vw, 5rem);
+    }
+
+    .profile-visual {
+        min-height: 610px;
+
+        margin-top: 25px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .hero-section {
+        padding-top: 120px;
+    }
+
+    .profile-visual {
+        max-width: 450px;
+    }
+
+    .profile-frame {
+        width: 285px;
+        height: 445px;
+    }
+
+    .orbit-one {
+        width: 400px;
+        height: 520px;
+    }
+
+    .orbit-two {
+        width: 340px;
+        height: 460px;
+    }
+
+    .analytics-card {
+        left: 0;
+    }
+
+    .strategy-card {
+        right: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+    .hero-section {
+        min-height: auto;
+
+        padding:
+            110px 20px 70px;
+    }
+
+    .availability-badge {
+        font-size: 0.65rem;
+    }
+
+    .intro-line {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-name {
+        font-size: 3.25rem;
+
+        letter-spacing: -2px;
+    }
+
+    .role-wrapper {
+        gap: 10px;
+    }
+
+    .role-line {
+        width: 30px;
+    }
+
+    .role-wrapper h2 {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.92rem;
+
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn-primary-neon,
+    .btn-outline-glass {
+        width: 100%;
+    }
+
+    .quick-stats {
+        gap: 12px;
+
+        justify-content:
+            space-between;
+    }
+
+    .stat-number {
+        font-size: 1.05rem;
+    }
+
+    .stat-label {
+        font-size: 0.55rem;
+    }
+
+
+    /* -------------------------
+       MOBILE PROFILE
+    ------------------------- */
+
+    .profile-visual {
+        min-height: 535px;
+
+        margin-top: 20px;
+    }
+
+    .profile-frame {
+        width: 260px;
+        height: 405px;
+
+        padding: 7px;
+
+        border-radius:
+            130px 130px 30px 30px;
+    }
+
+    .profile-image-wrapper {
+        border-radius:
+            123px 123px 23px 23px;
+    }
+
+    .profile-ring {
+        inset: 12px;
+
+        border-radius:
+            117px 117px 18px 18px;
+    }
+
+
+    /* -------------------------
+       MOBILE ORBITS
+    ------------------------- */
+
+    .orbit-one {
+        width: 330px;
+        height: 440px;
+    }
+
+    .orbit-two {
+        width: 290px;
+        height: 390px;
+    }
+
+
+    /* -------------------------
+       FLOATING CARDS
+    ------------------------- */
+
+    .analytics-card {
+        left: -2px;
+        top: 55px;
+    }
+
+    .strategy-card {
+        right: -2px;
+        bottom: 120px;
+    }
+
+    .floating-card {
+        padding:
+            9px 11px;
+    }
+
+    .floating-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .floating-card span {
+        font-size: 0.58rem;
+    }
+
+    .floating-card strong {
+        font-size: 0.7rem;
+    }
+
+
+    /* -------------------------
+       IDENTITY CARD
+    ------------------------- */
+
+    .identity-card {
+        width: 285px;
+
+        padding:
+            11px 13px;
+
+        bottom: 4px;
+    }
+
+    .identity-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .identity-content strong {
+        font-size: 0.7rem;
+    }
+
+    .identity-content small {
+        font-size: 0.58rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero-name {
+        font-size: 2.85rem;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 0.88rem;
+    }
+
+    .quick-stats {
+        gap: 8px;
+    }
+
+    .stat-number {
+        font-size: 0.95rem;
+    }
+
+    .stat-label {
+        font-size: 0.48rem;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    .profile-visual {
+        min-height: 500px;
+    }
+
+    .profile-frame {
+        width: 235px;
+        height: 366px;
+    }
+
+    .profile-image-wrapper {
+        border-radius:
+            111px 111px 21px 21px;
+    }
+
+    .profile-ring {
+        border-radius:
+            105px 105px 16px 16px;
+    }
+
+    .orbit-one {
+        width: 300px;
+        height: 400px;
+    }
+
+    .orbit-two {
+        width: 265px;
+        height: 355px;
+    }
+
+    .analytics-card {
+        left: -5px;
+    }
+
+    .strategy-card {
+        right: -5px;
+    }
+
+    .identity-card {
+        width: 265px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .hero-name {
+        font-size: 2.55rem;
+    }
+
+    .profile-visual {
+        min-height: 470px;
+    }
+
+    .profile-frame {
+        width: 215px;
+        height: 336px;
+    }
+
+    .profile-image-wrapper {
+        border-radius:
+            101px 101px 19px 19px;
+    }
+
+    .profile-ring {
+        border-radius:
+            95px 95px 15px 15px;
+    }
+
+    .orbit-one {
+        width: 275px;
+        height: 370px;
+    }
+
+    .orbit-two {
+        width: 240px;
+        height: 325px;
+    }
+
+    .identity-card {
+        width: 245px;
+    }
+
+    .identity-content small {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}

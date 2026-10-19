@@ -1,0 +1,265 @@
+<nav
+  class="portfolio-navbar"
+  [class.scrolled]="isScrolled"
+  [class.menu-open]="isMenuOpen"
+>
+
+  <!-- Decorative glow -->
+  <div class="navbar-glow"></div>
+
+
+  <div class="navbar-container">
+
+    <!-- =====================================================
+         LOGO
+         ===================================================== -->
+
+    <a
+      href="#home"
+      class="brand"
+      (click)="scrollToSection('home'); closeMenu()"
+      aria-label="Sambhab Shree Sahoo Home"
+    >
+
+      <div class="brand-mark">
+
+        <span>S</span>
+        <span>S</span>
+
+        <div class="brand-orbit orbit-one"></div>
+        <div class="brand-orbit orbit-two"></div>
+
+      </div>
+
+
+      <div class="brand-text">
+
+        <span class="brand-name">
+          Sambhab
+        </span>
+
+        <span class="brand-role">
+          Marketing · Analytics
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <!-- =====================================================
+         DESKTOP NAVIGATION
+         ===================================================== -->
+
+    <div class="desktop-navigation">
+
+      <a
+        *ngFor="let item of navItems"
+        href="#"
+        class="nav-link"
+        [class.active]="activeSection === item.section"
+        (click)="scrollToSection(item.section, $event)"
+      >
+
+        <span class="nav-link-number">
+          {{ item.number }}
+        </span>
+
+        <span class="nav-link-text">
+          {{ item.label }}
+        </span>
+
+        <span class="nav-link-line"></span>
+
+      </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         DESKTOP ACTIONS
+         ===================================================== -->
+
+    <div class="navbar-actions">
+
+      <button
+        type="button"
+        class="resume-btn"
+        (click)="downloadResume()"
+        aria-label="Download Resume"
+      >
+
+        <i class="bi bi-download"></i>
+
+        <span>
+          Resume
+        </span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="contact-btn"
+        (click)="goToContact()"
+      >
+
+        <span>
+          Let's Talk
+        </span>
+
+        <i class="bi bi-arrow-up-right"></i>
+
+      </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         MOBILE MENU BUTTON
+         ===================================================== -->
+
+    <button
+      type="button"
+      class="mobile-menu-button"
+      [class.active]="isMenuOpen"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-label="Toggle navigation menu"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+
+  <!-- =======================================================
+       MOBILE NAVIGATION
+       ======================================================= -->
+
+  <div
+    class="mobile-navigation"
+    [class.open]="isMenuOpen"
+  >
+
+    <div class="mobile-menu-inner">
+
+
+      <!-- Mobile menu heading -->
+
+      <div class="mobile-menu-heading">
+
+        <div>
+
+          <span class="menu-label">
+            NAVIGATE
+          </span>
+
+          <h3>
+            Explore the portfolio
+          </h3>
+
+        </div>
+
+
+        <div class="menu-status">
+
+          <span></span>
+
+          Available
+
+        </div>
+
+      </div>
+
+
+      <!-- Mobile links -->
+
+      <div class="mobile-links">
+
+        <a
+          *ngFor="let item of navItems; let i = index"
+          href="#"
+          class="mobile-nav-link"
+          [class.mobile-active]="activeSection === item.section"
+          (click)="scrollToSection(item.section, $event); closeMenu()"
+        >
+
+          <span class="mobile-link-number">
+            {{ item.number }}
+          </span>
+
+          <span class="mobile-link-name">
+            {{ item.label }}
+          </span>
+
+          <i class="bi bi-arrow-up-right"></i>
+
+        </a>
+
+      </div>
+
+
+      <!-- Mobile actions -->
+
+      <div class="mobile-actions">
+
+        <button
+          type="button"
+          class="mobile-resume-btn"
+          (click)="downloadResume()"
+        >
+
+          <i class="bi bi-file-earmark-person"></i>
+
+          Download Resume
+
+        </button>
+
+
+        <button
+          type="button"
+          class="mobile-contact-btn"
+          (click)="goToContact(); closeMenu()"
+        >
+
+          Let's Talk
+
+          <i class="bi bi-arrow-right"></i>
+
+        </button>
+
+      </div>
+
+
+      <!-- Mobile footer -->
+
+      <div class="mobile-menu-footer">
+
+        <span>
+          Marketing
+        </span>
+
+        <span class="footer-dot"></span>
+
+        <span>
+          Analytics
+        </span>
+
+        <span class="footer-dot"></span>
+
+        <span>
+          Strategy
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>

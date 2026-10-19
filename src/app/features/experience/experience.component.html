@@ -1,0 +1,576 @@
+<section class="experience-section">
+
+  <!-- =========================================================
+       BACKGROUND
+       ========================================================= -->
+
+  <div class="experience-bg" aria-hidden="true">
+
+    <div class="experience-grid"></div>
+
+    <div class="experience-glow experience-glow-one"></div>
+
+    <div class="experience-glow experience-glow-two"></div>
+
+    <div class="experience-watermark">
+      WORK
+    </div>
+
+  </div>
+
+
+  <div class="container experience-container">
+
+    <!-- =======================================================
+         SECTION HEADER
+         ======================================================= -->
+
+    <div class="experience-header">
+
+      <div class="experience-header-main">
+
+        <div class="section-kicker">
+          <span class="kicker-line"></span>
+          PROFESSIONAL EXPERIENCE
+        </div>
+
+        <h2>
+          Field Experience.
+          <span>Real Market Exposure.</span>
+        </h2>
+
+        <p>
+          A hands-on summer internship with Carlsberg India,
+          focused on retail market analysis, brand visibility,
+          stock availability and competitive market presence.
+        </p>
+
+      </div>
+
+
+      <div class="experience-header-side">
+
+        <span class="header-index">
+          01
+        </span>
+
+        <span class="header-index-label">
+          EXPERIENCE
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- =======================================================
+         MAIN EXPERIENCE CARD
+         ======================================================= -->
+
+    <article class="internship-card">
+
+      <!-- Decorative glow -->
+      <div class="card-glow"></div>
+
+
+      <!-- =====================================================
+           LEFT SIDE — INTERNSHIP INFORMATION
+           ===================================================== -->
+
+      <div class="internship-information">
+
+        <div class="experience-label">
+          SUMMER INTERNSHIP
+        </div>
+
+
+        <!-- Company -->
+        <div class="company-row">
+
+          <div class="company-mark">
+            CI
+          </div>
+
+          <div>
+
+            <span class="company-name">
+              Carlsberg India Limited
+            </span>
+
+            <span class="company-location">
+              <i class="bi bi-geo-alt-fill"></i>
+              Nexus Esplanade, Bhubaneswar
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- Internship Title -->
+        <h3>
+          Comparative Study on
+          <span>Brand Visibility</span>
+        </h3>
+
+
+        <!-- Internship Period -->
+        <div class="internship-period">
+
+          <span class="period-dot"></span>
+
+          <span>
+            JUNE — JULY 2026
+          </span>
+
+        </div>
+
+
+        <!-- Description -->
+        <p class="internship-description">
+          Conducted retail market analysis across ON-Trade and
+          OFF-Trade channels to evaluate brand visibility,
+          stock availability, pricing and competitive presence.
+        </p>
+
+
+        <!-- ===================================================
+             KEY METRICS
+             =================================================== -->
+
+        <div class="metrics-grid">
+
+          <div class="metric-card">
+
+            <span class="metric-value">
+              70+
+            </span>
+
+            <span class="metric-label">
+              OUTLETS
+            </span>
+
+          </div>
+
+
+          <div class="metric-card">
+
+            <span class="metric-value">
+              400+
+            </span>
+
+            <span class="metric-label">
+              VISIBILITY ASSETS
+            </span>
+
+          </div>
+
+
+          <div class="metric-card">
+
+            <span class="metric-value">
+              10+
+            </span>
+
+            <span class="metric-label">
+              PROMOTIONAL OUTLETS
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             AREAS OF WORK
+             =================================================== -->
+
+        <div class="work-areas">
+
+          <span>
+            <i class="bi bi-bar-chart-line"></i>
+            Market Analysis
+          </span>
+
+          <span>
+            <i class="bi bi-eye"></i>
+            Brand Visibility
+          </span>
+
+          <span>
+            <i class="bi bi-box-seam"></i>
+            Stock Availability
+          </span>
+
+          <span>
+            <i class="bi bi-graph-up-arrow"></i>
+            Sales Trends
+          </span>
+
+          <span>
+            <i class="bi bi-pie-chart"></i>
+            Market Share
+          </span>
+
+          <span>
+            <i class="bi bi-diagram-3"></i>
+            Distribution
+          </span>
+
+        </div>
+
+
+        <!-- Footer -->
+        <div class="internship-footer">
+
+          <span>
+            <i class="bi bi-check2-circle"></i>
+            FIELD RESEARCH
+          </span>
+
+          <span>
+            MARKET INSIGHTS
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           RIGHT SIDE — IMAGE CAROUSEL
+           ===================================================== -->
+
+      <div
+        class="internship-carousel"
+        (mouseenter)="stopAutoPlay()"
+        (mouseleave)="startAutoPlay()"
+      >
+
+        <!-- ===================================================
+             IMAGE FRAME
+             =================================================== -->
+
+        <div class="carousel-image-frame">
+
+
+          <!-- =================================================
+               10 CAROUSEL IMAGES
+               ================================================= -->
+
+          <div
+            *ngFor="
+              let image of internshipImages;
+              let i = index;
+              trackBy: trackByImage
+            "
+            class="carousel-slide"
+            [class.active]="i === currentImageIndex"
+          >
+
+            <img
+              [src]="image"
+              alt="Carlsberg India summer internship experience"
+              class="carousel-image"
+            />
+
+          </div>
+
+
+          <!-- =================================================
+               CINEMATIC OVERLAY
+               ================================================= -->
+
+          <div class="carousel-overlay"></div>
+
+
+          <!-- =================================================
+               TOP INFORMATION
+               ================================================= -->
+
+          <div class="carousel-top">
+
+            <span class="carousel-tag">
+
+              <i class="bi bi-camera-fill"></i>
+
+              FIELD EXPERIENCE
+
+            </span>
+
+
+            <span class="carousel-counter">
+
+              {{ currentImageIndex + 1 | number:'2.0-0' }}
+
+              /
+
+              {{ internshipImages.length | number:'2.0-0' }}
+
+            </span>
+
+          </div>
+
+
+          <!-- =================================================
+               PREVIOUS BUTTON
+               ================================================= -->
+
+          <button
+            type="button"
+            class="carousel-control carousel-prev"
+            aria-label="Previous image"
+            (click)="previousImage()"
+          >
+
+            <i class="bi bi-arrow-left"></i>
+
+          </button>
+
+
+          <!-- =================================================
+               NEXT BUTTON
+               ================================================= -->
+
+          <button
+            type="button"
+            class="carousel-control carousel-next"
+            aria-label="Next image"
+            (click)="nextImage()"
+          >
+
+            <i class="bi bi-arrow-right"></i>
+
+          </button>
+
+
+          <!-- Decorative corner -->
+          <div class="carousel-corner"></div>
+
+        </div>
+
+
+        <!-- ===================================================
+             DOT NAVIGATION
+             =================================================== -->
+
+        <div class="carousel-navigation">
+
+          <button
+            *ngFor="
+              let image of internshipImages;
+              let i = index;
+              trackBy: trackByImage
+            "
+            type="button"
+            class="carousel-dot"
+            [class.active]="i === currentImageIndex"
+            [attr.aria-label]="'Show image ' + (i + 1)"
+            (click)="goToImage(i)"
+          >
+          </button>
+
+        </div>
+
+
+        <!-- ===================================================
+             CAROUSEL FOOTER
+             =================================================== -->
+
+        <div class="carousel-note">
+
+          <span>
+
+            <i class="bi bi-images"></i>
+
+            INTERNSHIP GALLERY
+
+          </span>
+
+
+          <span>
+
+            AUTO PLAY
+
+          </span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- =======================================================
+         RESEARCH / RESPONSIBILITIES
+         ======================================================= -->
+
+    <div class="research-section">
+
+      <!-- Research heading -->
+
+      <div class="research-heading">
+
+        <span>
+          INTERNSHIP FOCUS
+        </span>
+
+        <h3>
+          From observation
+          <strong>to insight.</strong>
+        </h3>
+
+      </div>
+
+
+      <!-- =====================================================
+           RESEARCH GRID
+           ===================================================== -->
+
+      <div class="research-grid">
+
+
+        <!-- ===================================================
+             CARD 01
+             =================================================== -->
+
+        <div class="research-card">
+
+          <div class="research-icon">
+
+            <i class="bi bi-shop"></i>
+
+          </div>
+
+
+          <div>
+
+            <span class="research-number">
+              01
+            </span>
+
+            <h4>
+              Retail Market Analysis
+            </h4>
+
+            <p>
+              Evaluated brand visibility, stock availability,
+              pricing and competitive presence across
+              ON-Trade and OFF-Trade outlets.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             CARD 02
+             =================================================== -->
+
+        <div class="research-card">
+
+          <div class="research-icon">
+
+            <i class="bi bi-badge-ad"></i>
+
+          </div>
+
+
+          <div>
+
+            <span class="research-number">
+              02
+            </span>
+
+            <h4>
+              Brand Visibility
+            </h4>
+
+            <p>
+              Analysed 400+ visibility assets across Carlsberg,
+              Kingfisher and Budweiser to identify gaps in
+              POSM execution, signage and visicooler presence.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             CARD 03
+             =================================================== -->
+
+        <div class="research-card">
+
+          <div class="research-icon">
+
+            <i class="bi bi-megaphone"></i>
+
+          </div>
+
+
+          <div>
+
+            <span class="research-number">
+              03
+            </span>
+
+            <h4>
+              Promotional Execution
+            </h4>
+
+            <p>
+              Assessed promotional execution across 10+ outlets,
+              tracking offer implementation, product movement,
+              stock constraints and outlet feedback.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             CARD 04
+             =================================================== -->
+
+        <div class="research-card">
+
+          <div class="research-icon">
+
+            <i class="bi bi-graph-up"></i>
+
+          </div>
+
+
+          <div>
+
+            <span class="research-number">
+              04
+            </span>
+
+            <h4>
+              Sales &amp; Distribution Insights
+            </h4>
+
+            <p>
+              Analysed sales trends, market share and inventory
+              availability and translated field observations
+              into recommendations for distribution and
+              sales execution.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
