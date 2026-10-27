@@ -40,9 +40,8 @@
                 <span class="heading-index">01 / 08</span>
 
                 <p>
-                    A blend of marketing thinking, analytical curiosity
-                    and a constant desire to understand what drives
-                    business and people.
+                    A blend of marketing thinking, analytical curiosity, increased brand promotions, feasibility of outlets,
+                    and a constant desire to understand what drives business and people.
                 </p>
 
             </div>
@@ -139,8 +138,11 @@
 
                 <div class="intro-text">
 
-                    <p *ngFor="let paragraph of aboutText">
-                        {{ paragraph }}
+                    <p>
+                        I am interested in understanding how businesses connect with their customers and stand out in
+                        competitive markets. My interests include market research, brand promotions, campaigns and
+                        analysis, where I enjoy exploring customer preferences, identifying opportunities and
+                        supporting decisions that create a stronger market presence.
                     </p>
 
                 </div>
@@ -252,8 +254,11 @@
 
             <div class="focus-grid">
 
-                <article class="focus-card" *ngFor="let area of focusAreas; let i = index" [class.card-purple]="i === 0"
-                    [class.card-cyan]="i === 1" [class.card-green]="i === 2" [class.card-blue]="i === 3">
+                <article class="focus-card" *ngFor="let area of focusAreas; let i = index"
+                    [class.card-purple]="i === 0"
+                    [class.card-cyan]="i === 1"
+                    [class.card-green]="i === 2"
+                    [class.card-blue]="i === 3">
 
                     <div class="focus-card-glow"></div>
 
@@ -278,11 +283,23 @@
                     <div class="focus-card-content">
 
                         <h4>
-                            {{ area.title }}
+                            <ng-container *ngIf="i === 1; else originalTitle">
+                                Brand Promotion
+                            </ng-container>
+
+                            <ng-template #originalTitle>
+                                {{ area.title }}
+                            </ng-template>
                         </h4>
 
                         <p>
-                            {{ area.description }}
+                            <ng-container *ngIf="i === 1; else originalDescription">
+                                Increasing brand visibility in the outlets
+                            </ng-container>
+
+                            <ng-template #originalDescription>
+                                {{ area.description }}
+                            </ng-template>
                         </p>
 
                     </div>

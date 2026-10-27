@@ -28,7 +28,6 @@ export class AchievementsComponent implements OnInit, OnDestroy {
   achievementImages: string[] = [
     'assets/images/achievements/a1.jpeg',
     'assets/images/achievements/a2.jpeg',
-    'assets/images/achievements/a3.jpeg',
     'assets/images/achievements/a4.jpeg',
     'assets/images/achievements/a5.jpeg'
   ];
@@ -84,17 +83,6 @@ export class AchievementsComponent implements OnInit, OnDestroy {
         'Participated in intra-college cricket and was part of the team journey that reached the semi-final stage.',
       icon: 'bi-dribbble',
       accent: 'cyan'
-    },
-
-    {
-      title: 'Assistant General Secretary',
-      category: 'LEADERSHIP',
-      event: 'Victor Club · Sports Club Election',
-      year: '2026',
-      description:
-        'Stood for the position of Assistant General Secretary in the Victor Club election. Although he missed the position by a few votes, the experience reflected his willingness to take responsibility and step into student leadership.',
-      icon: 'bi-person-badge-fill',
-      accent: 'magenta'
     }
 
   ];

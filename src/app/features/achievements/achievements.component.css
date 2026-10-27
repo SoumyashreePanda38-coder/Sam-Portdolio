@@ -1413,6 +1413,7 @@
 
 /* =========================================================
    TIMELINE
+   4 ACHIEVEMENT CARDS
 ========================================================= */
 
 .achievement-timeline {
@@ -1422,11 +1423,15 @@
   display: grid;
 
   grid-template-columns:
-    repeat(5, minmax(0, 1fr));
+    repeat(4, minmax(0, 1fr));
 
-  gap: 14px;
+  gap: 18px;
 }
 
+
+/*
+   Timeline connector for FOUR cards
+*/
 
 .achievement-timeline::before {
 
@@ -1435,22 +1440,25 @@
   position: absolute;
 
   top: 28px;
-  left: 8%;
-  right: 8%;
+
+  left: 7%;
+
+  right: 7%;
 
   height: 1px;
 
   background:
     linear-gradient(
       90deg,
-      var(--orange),
       var(--gold),
+      var(--orange),
       var(--green),
-      var(--cyan),
-      var(--magenta)
+      var(--cyan)
     );
 
   opacity: 0.4;
+
+  z-index: 0;
 }
 
 
@@ -1464,9 +1472,11 @@
 
   position: relative;
 
+  min-width: 0;
+
   min-height: 330px;
 
-  padding: 60px 20px 22px;
+  padding: 60px 21px 22px;
 
   border-radius: 18px;
 
@@ -1536,6 +1546,11 @@
   --card-accent: var(--cyan);
 }
 
+
+/*
+   Kept for compatibility if another achievement
+   is ever assigned the magenta accent.
+*/
 
 .card-magenta {
   --card-accent: var(--magenta);
@@ -1773,7 +1788,8 @@
 
   display: grid;
 
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns:
+    auto 1fr auto;
 
   align-items: center;
 
@@ -1884,6 +1900,7 @@
 
 
 .closing-accent span:nth-child(1) {
+
   background: var(--burgundy);
 
   box-shadow:
@@ -1893,6 +1910,7 @@
 
 
 .closing-accent span:nth-child(2) {
+
   background: var(--orange);
 
   box-shadow:
@@ -1902,6 +1920,7 @@
 
 
 .closing-accent span:nth-child(3) {
+
   background: var(--cyan);
 
   box-shadow:
@@ -1911,6 +1930,7 @@
 
 
 .closing-accent span:nth-child(4) {
+
   background: var(--green);
 
   box-shadow:
@@ -1920,12 +1940,13 @@
 
 
 /* =========================================================
-   TABLET
+   LARGE TABLET / SMALL DESKTOP
 ========================================================= */
 
 @media (max-width: 1100px) {
 
   .achievements-section {
+
     padding: 100px 0 90px;
   }
 
@@ -1939,28 +1960,43 @@
 
 
   .achievement-story {
+
     padding: 38px 32px;
   }
 
 
   .achievement-gallery {
+
     padding: 23px;
   }
 
 
+  /*
+     Four cards become two rows of two.
+  */
+
   .achievement-timeline {
 
     grid-template-columns:
-      repeat(3, minmax(0, 1fr));
+      repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
   }
 
 
+  /*
+     No horizontal connector when cards
+     wrap into multiple rows.
+  */
+
   .achievement-timeline::before {
+
     display: none;
   }
 
 
   .achievement-card {
+
     min-height: 310px;
   }
 
@@ -1974,6 +2010,7 @@
 @media (max-width: 900px) {
 
   .achievements-section {
+
     padding: 90px 0 80px;
   }
 
@@ -2016,6 +2053,14 @@
 
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+
+  .achievement-card {
+
+    min-height: 300px;
   }
 
 }
@@ -2028,6 +2073,7 @@
 @media (max-width: 650px) {
 
   .achievements-section {
+
     padding: 75px 0 65px;
   }
 
@@ -2055,6 +2101,7 @@
 
 
   .achievements-header-side {
+
     display: none;
   }
 
@@ -2108,11 +2155,13 @@
 
 
   .gallery-prev {
+
     left: 10px;
   }
 
 
   .gallery-next {
+
     right: 10px;
   }
 

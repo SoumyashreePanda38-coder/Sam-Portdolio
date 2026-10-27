@@ -23,6 +23,7 @@ export class CertificationsComponent implements OnInit, OnDestroy {
 
   certifications: Certification[] = [
 
+    // 01
     {
       title: 'Tally Prime with GST',
       category: 'FINANCE & ACCOUNTING',
@@ -34,6 +35,7 @@ export class CertificationsComponent implements OnInit, OnDestroy {
       image: 'assets/images/certificates/c1.jpeg'
     },
 
+    // 02
     {
       title: 'Power BI',
       category: 'DATA & ANALYTICS',
@@ -45,8 +47,9 @@ export class CertificationsComponent implements OnInit, OnDestroy {
       image: 'assets/images/certificates/c2.png'
     },
 
+    // 03
     {
-      title: 'Digital Branding',
+      title: 'Marketing Fundamentals',
       category: 'MARKETING',
       description:
         'Certification focused on digital branding and building a stronger online brand presence.',
@@ -54,6 +57,78 @@ export class CertificationsComponent implements OnInit, OnDestroy {
       accent: 'orange',
       number: '03',
       image: 'assets/images/certificates/c3.jpeg'
+    },
+
+    // 04
+    {
+      title: 'Introduction to AI',
+      category: 'ARTIFICIAL INTELLIGENCE',
+      description:
+        'Certification covering the fundamentals of artificial intelligence and its applications.',
+      icon: 'bi-robot',
+      accent: 'purple',
+      number: '04',
+      image: 'assets/images/certificates/c4.png'
+    },
+
+    // 05
+    {
+      title: 'Graphic Design',
+      category: 'DESIGN',
+      description:
+        'Certification focused on graphic design concepts, visual communication and creative design principles.',
+      icon: 'bi-palette-fill',
+      accent: 'pink',
+      number: '05',
+      image: 'assets/images/certificates/c5.png'
+    },
+
+    // 06
+    {
+      title: 'Introduction to Microsoft Excel',
+      category: 'PRODUCTIVITY & ANALYTICS',
+      description:
+        'Certification covering the fundamentals of Microsoft Excel and spreadsheet-based data handling.',
+      icon: 'bi-file-earmark-spreadsheet-fill',
+      accent: 'green',
+      number: '06',
+      image: 'assets/images/certificates/c6.png'
+    },
+
+    // 07
+    {
+      title: 'Getting Started with MS PowerPoint',
+      category: 'PRESENTATION & PRODUCTIVITY',
+      description:
+        'Certification focused on the fundamentals of Microsoft PowerPoint and effective presentation creation.',
+      icon: 'bi-file-earmark-slides-fill',
+      accent: 'orange',
+      number: '07',
+      image: 'assets/images/certificates/c7.png'
+    },
+
+    // 08
+    {
+      title: 'Introduction to Cybersecurity Essentials',
+      category: 'CYBERSECURITY',
+      description:
+        'Certification covering essential cybersecurity concepts, digital security and safe computing practices.',
+      icon: 'bi-shield-lock-fill',
+      accent: 'cyan',
+      number: '08',
+      image: 'assets/images/certificates/c8.png'
+    },
+
+    // 09
+    {
+      title: 'Carlsberg Summer Internship',
+      category: 'INTERNSHIP EXPERIENCE',
+      description:
+        'Summer internship experience at Carlsberg India focused on market research, brand visibility, stock availability and promotional activities.',
+      icon: 'bi-briefcase-fill',
+      accent: 'gold',
+      number: '09',
+      image: 'assets/images/certificates/c9.png'
     }
   ];
 
